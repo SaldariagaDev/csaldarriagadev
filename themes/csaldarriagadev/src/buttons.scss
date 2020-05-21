@@ -1,0 +1,26 @@
+// button-variant($background, $border, $hover-background: darken($background, 7.5%), $hover-border: darken($border, 10%), $active-background: darken($background, 10%), $active-border: darken($border, 12.5%)
+
+.btn-primary {
+    @include button-variant(
+        $primary,     // background
+        $primary,     // border
+        $primary-700, // hover-background
+        $primary,     // hover-border
+        $primary-700, // active-background
+        $primary      // active-border
+    );
+}
+
+//.btn-outline-primary {
+//    @include button-outline-variant($primary, #222222, lighten($primary,5%), $primary);
+//}
+
+
+
+.btn {
+    &.shadow {
+        &:hover, &:focus {
+            box-shadow: $box-shadow-btn-hover !important;
+        }
+    }
+}

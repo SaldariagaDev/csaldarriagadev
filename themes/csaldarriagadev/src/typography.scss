@@ -1,0 +1,24 @@
+.fa {
+  &-1_5x {
+    font-size: $spacer * 1.5;
+  }
+  &-1_8x {
+    font-size: $spacer * 1.8;
+  }
+  &-2x {
+    font-size: $spacer * 2;
+  }
+  &-3x {
+    font-size: $spacer * 3;
+  }
+  &-4x {
+    font-size: $spacer * 4;
+  }
+  &-5x {
+    font-size: $spacer * 5;
+  }
+  &-6x {
+    font-size: $spacer * 6;
+  }
+}
+

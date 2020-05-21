@@ -1,0 +1,143 @@
+// Media
+/* fix for bootstrap media component */
+.media img {
+  max-width: none;
+}
+
+// Video Embeds
+.wp-block-embed.is-type-video {
+  .entry-content-asset {
+    @extend .embed-responsive;
+  }
+  &.wp-embed-aspect-21-9 .entry-content-asset {
+    @extend .embed-responsive-21by9;
+  }
+  &.wp-embed-aspect-16-9 .entry-content-asset {
+    @extend .embed-responsive-16by9;
+  }
+  &.wp-embed-aspect-4-3 .entry-content-asset {
+    @extend .embed-responsive-4by3;
+  }
+}
+
+// Images
+img {
+  max-width: 100%;
+}
+
+// Links
+a {
+  transition: $transition-base;
+}
+
+// Jumbotron
+.jumbotron {
+  position: relative;
+  
+  &--objfit-content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    &--dark {
+    
+    }
+  }
+  
+  &--objfit-image {
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+// Slider
+.slick-slider {
+  .slide {
+    display: block !important;
+    position: relative;
+  }
+  
+  .caption {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 800px;
+  }
+  
+  .slick-arrow {
+    z-index: 999;
+  
+    &:before {
+      font-family: "Font Awesome 5 Pro";
+      font-weight: 900;
+    }
+    
+    &.slick-prev {
+      @include media-breakpoint-down(sm) {
+        left: 10px;
+      }
+      
+      &:before {
+        content: '\f053';
+      }
+    }
+    
+    &.slick-next {
+      @include media-breakpoint-down(sm) {
+        right: 10px;
+      }
+  
+      &:before {
+        content: '\f054';
+      }
+    }
+  }
+}
+
+
+// Card
+.card {
+  overflow: hidden;
+}
+
+.browser-border {
+  position: relative;
+  &:before {
+    content: "•••";
+    font-size: 2.4rem;
+    line-height: 0;
+    letter-spacing: -2px;
+    position: absolute;
+    top: 11px;
+    left: 4px;
+    color: $gray-500;
+  }
+  &:after {
+    content: "";
+    height: 10px;
+    width: calc(100% - 60px);
+    background: $gray-200;
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    border-radius: 3px;
+  }
+  img {
+    padding-top: 2 * $spacer;
+    background: $gray-400;
+  }
+}
