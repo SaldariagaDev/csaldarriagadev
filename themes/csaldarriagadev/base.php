@@ -1,4 +1,5 @@
-    <?php get_template_part( 'templates/head' ); ?>
+<?php use WPDev\Template\Template;
+    get_template_part( 'templates/head' ); ?>
     <body <?php body_class(); ?>>
         <!--[if lt IE 8]>
         <div class="alert alert-warning">
@@ -16,11 +17,11 @@
             get_template_part( 'templates/header' );
         }
         if ( ! is_front_page() ) {
-            get_template_part( 'templates/page', 'header' );
+	        template('templates/page-header.php', ['data' => $data]);
         } ?>
         <div class="container">
             <div class="row">
-                <main class="main py-3 <?php echo roots_main_class(); ?>" role="main">
+                <main class="main <?php echo roots_main_class(); ?>" role="main">
 			        <?php include roots_template_path(); ?>
                 </main>
 		        <?php if ( roots_display_sidebar() ) : ?>

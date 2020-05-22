@@ -1,8 +1,8 @@
-<div class="mt-auto pt-6 container">
-    <div class="full-width px-0 border-triangle-top-left-secondary-700 mt-n3"></div>
+<div class="mt-auto container">
+<!--    <div class="full-width px-0 border-triangle-top-left-secondary-700 mt-n3"></div>-->
     <div class="full-width py-6 bg-gradient-secondary-700--dark-400  text-light text-center">
         <h2 class="font-weight-normal">Free Consultation</h2>
-        <p class="lead">Let’s discuss your website, web app and internet marketing needs</p>
+        <p class="lead">Get in touch to discuss web development/design and internet marketing needs</p>
         <a href="/contact" class="btn btn-primary btn-lg shadow">Schedule Now</a>
     </div>
     <footer class="site-footer full-width bg-secondary-700 text-light py-6" role="contentinfo">

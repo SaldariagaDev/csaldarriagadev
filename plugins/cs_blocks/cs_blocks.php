@@ -27,6 +27,36 @@ function cs_register_acf_block_types() {
 		],
 	]);
 
+	// Archive
+	acf_register_block_type([
+		'name'              => 'archive',
+		'title'             => __('Archive'),
+		'description'       => __('Archive view of posts'),
+		'render_template'   => plugin_dir_path( __FILE__ ) . 'blocks/archive.php',
+		'category'          => 'widgets',
+		'icon'              => $svg_logo,
+		'mode'              => 'edit',
+		'supports'          => [
+			'mode' => false,
+			'align' => false
+		],
+	]);
+
+	// Spacer
+	acf_register_block_type([
+		'name'              => 'spacer',
+		'title'             => __('Spacer'),
+		'description'       => __('Spacer with different sizes to separate items'),
+		'render_template'   => plugin_dir_path( __FILE__ ) . 'blocks/spacer.php',
+		'category'          => 'widgets',
+		'mode'              => 'edit',
+		'supports'          => [
+			'mode' => false,
+			'align' => false
+		],
+		'icon'              => $svg_logo,
+	]);
+
 	// CTA Quick Links
 /*	acf_register_block_type([
 		'name'              => 'cta_quick_links',

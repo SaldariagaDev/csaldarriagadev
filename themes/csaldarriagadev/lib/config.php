@@ -29,7 +29,7 @@ define('POST_EXCERPT_LENGTH', 40); // Length in words for excerpt_length filter 
  * .main classes
  */
 function roots_main_class() {
-  if (roots_display_sidebar()) {
+  if (!roots_display_sidebar()) {
     // Classes on pages with the sidebar
     $class = 'col-12 col-lg-9';
   } else {
@@ -63,18 +63,16 @@ function roots_display_sidebar() {
      * array('function_name', array('arg1', 'arg2'))
      *
      * The second element must be an array even if there's only 1 argument.
+     * @param array list of conditional tags (http://codex.wordpress.org/Conditional_Tags)
+     * @param array list of page templates. These will be checked via is_page_template()
+     *
+     * @return boolean True will hide the sidebar, False will not
      */
     array(
-      'is_404',
-      'is_front_page'
+//      'is_404',
     ),
-    /**
-     * Page template checks (via is_page_template())
-     * Any of these page templates that return true won't show the sidebar
-     */
     array(
-      'page-templates/full-width.php',
-      'page-templates/projects-archive.php'
+      'page-templates/sidebar.php'
     )
   );
 

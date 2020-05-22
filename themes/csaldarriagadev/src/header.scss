@@ -25,19 +25,19 @@
         margin-right: $spacer;
         position: relative;
 
-        &:before {
-          content: '';
-          height: 0;
-          width: 100%;
-          background: $gray-300;
-          position: absolute;
-          top: -$spacer;
-          left: 0;
-          right: 0;
-        }
-        &.active:before {
-          height: 3px;
-        }
+        //&:before {
+        //  content: '';
+        //  height: 0;
+        //  width: 100%;
+        //  background: $gray-300;
+        //  position: absolute;
+        //  top: -$spacer;
+        //  left: 0;
+        //  right: 0;
+        //}
+        //&.active:before {
+        //  height: 3px;
+        //}
       }
       
       @include media-breakpoint-up(xl) {

@@ -116,22 +116,32 @@ $spacers: map-merge(
 $sizes: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $sizes: map-merge(
-    (
-            25: 25%,
-            50: 50%,
-            75: 75%,
-            100: 100%,
-            auto: auto,
-            200:  200px,
-            300:  300px,
-            400:  400px,
-            500:  500px,
-            600:  600px,
-            700:  700px,
-            800:  800px,
-            900:  900px,
-    ),
-    $sizes
+                (
+                        25p:    25%,
+                        50p:    50%,
+                        75p:    75%,
+                        100p:   100%,
+                        auto:   auto,
+                        10:     10px,
+                        1-5:    15px,
+                        20:     20px,
+                        30:     30px,
+                        40:     40px,
+                        50:     50px,
+                        60:     60px,
+                        70:     70px,
+                        80:     80px,
+                        90:     90px,
+                        200:    200px,
+                        300:    300px,
+                        400:    400px,
+                        500:    500px,
+                        600:    600px,
+                        700:    700px,
+                        800:    800px,
+                        900:    900px,
+                ),
+                $sizes
 );
 
 // Shadows
@@ -191,7 +201,7 @@ $btn-font-weight:               $font-weight-light;
 //$btn-font-size:                 1.6rem;
 $btn-font-size-lg:              $spacer * 1.8;
 
-$btn-border-width:              0;
+$btn-border-width:              1px;
 $btn-border-radius:             3rem;
 $btn-border-radius-sm:          3rem;
 $btn-border-radius-lg:          3rem;

@@ -1,40 +1,38 @@
 <?php
 use WPDev\Models\Image;
-$quick_link_items = get_field('quick_link_items');
+use WPDev\Models\Post;
+$heading = get_field('heading');
+$caption = get_field('caption');
+$featured_posts = get_field('posts');
+$button = get_field('button'); ?>
 
-if($quick_link_items) : ?>
-	<section class="cta-links full-width bg-gray-200 pt-6 pb-3 mb-n9">
-		<div class="row">
+<div class="full-width bg-light py-6">
+    <?php if($heading) : ?>
+        <h2 class="font-weight-light text-center mb-1-5"><?= $heading; ?></h2>
+    <?php endif; ?>
 
-			<?php foreach($quick_link_items as $quick_link_item) :
-				$image = $quick_link_item['cta_link_image'];
-				$title = $quick_link_item['cta_link_title'];
-				$description = $quick_link_item['cta_link_description'];
-				$link = $quick_link_item['cta_link_link']; ?>
-				<div class="col-12 col-md-6 col-lg-3 mb-3"> <!--TODO: Dynamic Column Classes based on # of items -->
-					<div class="card border-0 ">
-						<?php if($image != false) : ?>
-							<?php echo Image::create($image['id'], 'large')
-                                ->setAttribute('class', 'card-image-top'); ?>
-						<?php endif; ?>
-						<div class="card-footer bg-white">
-                            <?php if($title != false) : ?>
-                                <h2 class="h3"><?= $title; ?></h2>
-                            <?php endif; ?>
-                            <?= $description != false ? $description : null; ?>
-                            <?php if($link != false) : ?>
-                                <a href="<?= $link['url']; ?>"
-                                    class="stretched-link btn btn-primary"
-                                    target="<?= $link['target']; ?>">
-                                    <?= isset($link['title']) ? $link['title'] : 'Learn more'; ?>
-                                </a>
-                            <?php endif; ?>
-						</div>
-					</div>
-				</div>
+    <?php if($caption) : ?>
+        <p class="lead text-center mb-6 text-gray-500 mxw-600 mx-auto"><?= $caption; ?></p>
+    <?php endif; ?>
+
+    <?php if($featured_posts) : ?>
+        <div class="row justify-content-center">
+            <?php foreach($featured_posts as $post) :
+                $post = Post::create($post->ID);
+                $features = $post->terms('project_feature'); ?>
+                <div class="col-12 col-md-6 col-lg-5 mb-3">
+                    <?php include('post-card.php'); ?>
+                </div>
             <?php endforeach; ?>
-		</div>
-	</section>
-<?php endif;
+        </div>
+    <?php endif; ?>
 
-?>
+    <?php if($button) : ?>
+        <div class="text-center">
+            <a href="<?= $button['url']; ?>" class="btn btn-secondary shadow">
+                <?= $button['title'] ? $button['title'] : 'View All' ?>
+            </a>
+        </div>
+    <?php endif; ?>
+</div>
+<!--<div class="full-width px-0 border-triangle border-triangle-bottom-right-light mb-n9"></div>-->

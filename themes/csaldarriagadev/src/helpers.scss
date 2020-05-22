@@ -181,4 +181,15 @@
     &-secondary-700-dark-700 {
         background: $secondary-700 linear-gradient(0deg, $dark-700, $secondary-700) repeat-x !important;
     }
+    &-gray-200-gray-300 {
+        background: $gray-200 linear-gradient(0deg, $gray-300, $gray-200) repeat-x !important;
+    }
+}
+
+a.shadow {
+    &.shadow-lg {
+        &:hover, &:focus {
+            box-shadow: $box-shadow !important;
+        }
+    }
 }
