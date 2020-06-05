@@ -22,7 +22,7 @@ PostType::create('project')
 
 function project_taxonomies_init() {
 	register_taxonomy( 'project_feature', ['project'], [
-		'hierarchical'      => false,
+		'hierarchical'      => true,
 		'public'            => false,
 		'show_in_nav_menus' => true,
 		'show_ui'           => true,

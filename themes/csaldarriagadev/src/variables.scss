@@ -146,7 +146,7 @@ $sizes: map-merge(
 
 // Shadows
 $box-shadow-sm:                 0 .125rem .25rem rgba($black, .075);
-$box-shadow:                    0 $spacer * .3 $spacer * 1.5 rgba($black, .6);
+$box-shadow:                    0 $spacer * .3 $spacer * 1.5 rgba($black, .3);
 $box-shadow-btn-hover:          0 $spacer * .3 $spacer * .5 rgba($black, .6);
 $box-shadow-lg:                 0 1rem 3rem rgba($black, .175);
 

@@ -490,7 +490,9 @@ hr {
 }
 
 small,
-.small {
+.small,
+.frm_error,
+.frm_description {
   font-size: 0.875rem;
   font-weight: 400;
 }
@@ -2565,7 +2567,7 @@ pre code {
   border: 0;
 }
 
-.form-control {
+.form-control, .frm_forms input[type=text], .frm_forms input[type=email], .frm_forms input[type=tel], .frm_forms textarea {
   display: block;
   width: 100%;
   height: calc(1.5em + 0.75rem + 2px);
@@ -2582,47 +2584,47 @@ pre code {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
-  .form-control {
+  .form-control, .frm_forms input[type=text], .frm_forms input[type=email], .frm_forms input[type=tel], .frm_forms textarea {
     -webkit-transition: none;
     transition: none;
   }
 }
-.form-control::-ms-expand {
+.form-control::-ms-expand, .frm_forms input[type=text]::-ms-expand, .frm_forms input[type=email]::-ms-expand, .frm_forms input[type=tel]::-ms-expand, .frm_forms textarea::-ms-expand {
   background-color: transparent;
   border: 0;
 }
-.form-control:-moz-focusring {
+.form-control:-moz-focusring, .frm_forms input[type=text]:-moz-focusring, .frm_forms input[type=email]:-moz-focusring, .frm_forms input[type=tel]:-moz-focusring, .frm_forms textarea:-moz-focusring {
   color: transparent;
   text-shadow: 0 0 0 #495057;
 }
-.form-control:focus {
+.form-control:focus, .frm_forms input[type=text]:focus, .frm_forms input[type=email]:focus, .frm_forms input[type=tel]:focus, .frm_forms textarea:focus {
   color: #495057;
   background-color: #fff;
   border-color: white;
   outline: 0;
   box-shadow: 0 0 0 0.2rem rgba(255, 213, 128, 0.25);
 }
-.form-control::-webkit-input-placeholder {
+.form-control::-webkit-input-placeholder, .frm_forms input[type=text]::-webkit-input-placeholder, .frm_forms input[type=email]::-webkit-input-placeholder, .frm_forms input[type=tel]::-webkit-input-placeholder, .frm_forms textarea::-webkit-input-placeholder {
   color: #4D4D4D;
   opacity: 1;
 }
-.form-control::-moz-placeholder {
+.form-control::-moz-placeholder, .frm_forms input[type=text]::-moz-placeholder, .frm_forms input[type=email]::-moz-placeholder, .frm_forms input[type=tel]::-moz-placeholder, .frm_forms textarea::-moz-placeholder {
   color: #4D4D4D;
   opacity: 1;
 }
-.form-control:-ms-input-placeholder {
+.form-control:-ms-input-placeholder, .frm_forms input[type=text]:-ms-input-placeholder, .frm_forms input[type=email]:-ms-input-placeholder, .frm_forms input[type=tel]:-ms-input-placeholder, .frm_forms textarea:-ms-input-placeholder {
   color: #4D4D4D;
   opacity: 1;
 }
-.form-control::-ms-input-placeholder {
+.form-control::-ms-input-placeholder, .frm_forms input[type=text]::-ms-input-placeholder, .frm_forms input[type=email]::-ms-input-placeholder, .frm_forms input[type=tel]::-ms-input-placeholder, .frm_forms textarea::-ms-input-placeholder {
   color: #4D4D4D;
   opacity: 1;
 }
-.form-control::placeholder {
+.form-control::placeholder, .frm_forms input[type=text]::placeholder, .frm_forms input[type=email]::placeholder, .frm_forms input[type=tel]::placeholder, .frm_forms textarea::placeholder {
   color: #4D4D4D;
   opacity: 1;
 }
-.form-control:disabled, .form-control[readonly] {
+.form-control:disabled, .frm_forms input[type=text]:disabled, .frm_forms input[type=email]:disabled, .frm_forms input[type=tel]:disabled, .frm_forms textarea:disabled, .form-control[readonly], .frm_forms input[readonly][type=text], .frm_forms input[readonly][type=email], .frm_forms input[readonly][type=tel], .frm_forms textarea[readonly] {
   background-color: #F2F2F2;
   opacity: 1;
 }
@@ -2707,15 +2709,15 @@ select.form-control[size], select.form-control[multiple] {
   height: auto;
 }
 
-textarea.form-control {
+textarea.form-control, .frm_forms textarea {
   height: auto;
 }
 
-.form-group {
+.form-group, .frm_form_field {
   margin-bottom: 1rem;
 }
 
-.form-text {
+.form-text, .frm_description {
   display: block;
   margin-top: 0.25rem;
 }
@@ -2797,7 +2799,7 @@ textarea.form-control {
   display: block;
 }
 
-.was-validated .form-control:valid, .form-control.is-valid {
+.was-validated .form-control:valid, .was-validated .frm_forms input[type=text]:valid, .frm_forms .was-validated input[type=text]:valid, .was-validated .frm_forms input[type=email]:valid, .frm_forms .was-validated input[type=email]:valid, .was-validated .frm_forms input[type=tel]:valid, .frm_forms .was-validated input[type=tel]:valid, .was-validated .frm_forms textarea:valid, .frm_forms .was-validated textarea:valid, .form-control.is-valid, .frm_forms input.is-valid[type=text], .frm_forms input.is-valid[type=email], .frm_forms input.is-valid[type=tel], .frm_forms textarea.is-valid {
   border-color: #28a745;
   padding-right: calc(1.5em + 0.75rem);
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
@@ -2805,12 +2807,12 @@ textarea.form-control {
   background-position: right calc(0.375em + 0.1875rem) center;
   background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
 }
-.was-validated .form-control:valid:focus, .form-control.is-valid:focus {
+.was-validated .form-control:valid:focus, .was-validated .frm_forms input[type=text]:valid:focus, .frm_forms .was-validated input[type=text]:valid:focus, .was-validated .frm_forms input[type=email]:valid:focus, .frm_forms .was-validated input[type=email]:valid:focus, .was-validated .frm_forms input[type=tel]:valid:focus, .frm_forms .was-validated input[type=tel]:valid:focus, .was-validated .frm_forms textarea:valid:focus, .frm_forms .was-validated textarea:valid:focus, .form-control.is-valid:focus, .frm_forms input.is-valid[type=text]:focus, .frm_forms input.is-valid[type=email]:focus, .frm_forms input.is-valid[type=tel]:focus, .frm_forms textarea.is-valid:focus {
   border-color: #28a745;
   box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
 }
 
-.was-validated textarea.form-control:valid, textarea.form-control.is-valid {
+.was-validated textarea.form-control:valid, .was-validated .frm_forms textarea:valid, .frm_forms .was-validated textarea:valid, textarea.form-control.is-valid, .frm_forms textarea.is-valid {
   padding-right: calc(1.5em + 0.75rem);
   background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);
 }
@@ -2885,11 +2887,19 @@ textarea.form-control {
 .was-validated :invalid ~ .invalid-feedback,
 .was-validated :invalid ~ .invalid-tooltip,
 .is-invalid ~ .invalid-feedback,
-.is-invalid ~ .invalid-tooltip {
+.frm_forms input[type=text][aria-invalid=true] ~ .invalid-feedback,
+.frm_forms input[type=email][aria-invalid=true] ~ .invalid-feedback,
+.frm_forms input[type=tel][aria-invalid=true] ~ .invalid-feedback,
+.frm_forms textarea[aria-invalid=true] ~ .invalid-feedback,
+.is-invalid ~ .invalid-tooltip,
+.frm_forms input[type=text][aria-invalid=true] ~ .invalid-tooltip,
+.frm_forms input[type=email][aria-invalid=true] ~ .invalid-tooltip,
+.frm_forms input[type=tel][aria-invalid=true] ~ .invalid-tooltip,
+.frm_forms textarea[aria-invalid=true] ~ .invalid-tooltip {
   display: block;
 }
 
-.was-validated .form-control:invalid, .form-control.is-invalid {
+.was-validated .form-control:invalid, .was-validated .frm_forms input[type=text]:invalid, .frm_forms .was-validated input[type=text]:invalid, .was-validated .frm_forms input[type=email]:invalid, .frm_forms .was-validated input[type=email]:invalid, .was-validated .frm_forms input[type=tel]:invalid, .frm_forms .was-validated input[type=tel]:invalid, .was-validated .frm_forms textarea:invalid, .frm_forms .was-validated textarea:invalid, .form-control.is-invalid, .frm_forms textarea.form-control[aria-invalid=true], .frm_forms input.is-invalid[type=text], .frm_forms input[type=text][aria-invalid=true], .frm_forms input.is-invalid[type=email], .frm_forms input[type=email][aria-invalid=true], .frm_forms input.is-invalid[type=tel], .frm_forms input[type=tel][aria-invalid=true], .frm_forms textarea.is-invalid, .frm_forms textarea[aria-invalid=true] {
   border-color: #dc3545;
   padding-right: calc(1.5em + 0.75rem);
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23dc3545' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
@@ -2897,56 +2907,60 @@ textarea.form-control {
   background-position: right calc(0.375em + 0.1875rem) center;
   background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
 }
-.was-validated .form-control:invalid:focus, .form-control.is-invalid:focus {
+.was-validated .form-control:invalid:focus, .was-validated .frm_forms input[type=text]:invalid:focus, .frm_forms .was-validated input[type=text]:invalid:focus, .was-validated .frm_forms input[type=email]:invalid:focus, .frm_forms .was-validated input[type=email]:invalid:focus, .was-validated .frm_forms input[type=tel]:invalid:focus, .frm_forms .was-validated input[type=tel]:invalid:focus, .was-validated .frm_forms textarea:invalid:focus, .frm_forms .was-validated textarea:invalid:focus, .form-control.is-invalid:focus, .frm_forms input.is-invalid[type=text]:focus, .frm_forms input[type=text][aria-invalid=true]:focus, .frm_forms input.is-invalid[type=email]:focus, .frm_forms input[type=email][aria-invalid=true]:focus, .frm_forms input.is-invalid[type=tel]:focus, .frm_forms input[type=tel][aria-invalid=true]:focus, .frm_forms textarea.is-invalid:focus, .frm_forms textarea[aria-invalid=true]:focus {
   border-color: #dc3545;
   box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
 }
 
-.was-validated textarea.form-control:invalid, textarea.form-control.is-invalid {
+.was-validated textarea.form-control:invalid, .was-validated .frm_forms textarea:invalid, .frm_forms .was-validated textarea:invalid, textarea.form-control.is-invalid, .frm_forms textarea.form-control[aria-invalid=true], .frm_forms textarea.is-invalid, .frm_forms textarea[aria-invalid=true] {
   padding-right: calc(1.5em + 0.75rem);
   background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);
 }
 
-.was-validated .custom-select:invalid, .custom-select.is-invalid {
+.was-validated .custom-select:invalid, .custom-select.is-invalid, .frm_forms input.custom-select[type=text][aria-invalid=true], .frm_forms input.custom-select[type=email][aria-invalid=true], .frm_forms input.custom-select[type=tel][aria-invalid=true], .frm_forms textarea.custom-select[aria-invalid=true] {
   border-color: #dc3545;
   padding-right: calc(0.75em + 2.3125rem);
   background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0.75rem center/8px 10px, url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23dc3545' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e") #fff no-repeat center right 1.75rem/calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
 }
-.was-validated .custom-select:invalid:focus, .custom-select.is-invalid:focus {
+.was-validated .custom-select:invalid:focus, .custom-select.is-invalid:focus, .frm_forms input.custom-select[type=text][aria-invalid=true]:focus, .frm_forms input.custom-select[type=email][aria-invalid=true]:focus, .frm_forms input.custom-select[type=tel][aria-invalid=true]:focus, .frm_forms textarea.custom-select[aria-invalid=true]:focus {
   border-color: #dc3545;
   box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
 }
 
-.was-validated .form-check-input:invalid ~ .form-check-label, .form-check-input.is-invalid ~ .form-check-label {
+.was-validated .form-check-input:invalid ~ .form-check-label, .form-check-input.is-invalid ~ .form-check-label, .frm_forms input.form-check-input[type=text][aria-invalid=true] ~ .form-check-label, .frm_forms input.form-check-input[type=email][aria-invalid=true] ~ .form-check-label, .frm_forms input.form-check-input[type=tel][aria-invalid=true] ~ .form-check-label, .frm_forms textarea.form-check-input[aria-invalid=true] ~ .form-check-label {
   color: #dc3545;
 }
 .was-validated .form-check-input:invalid ~ .invalid-feedback,
-.was-validated .form-check-input:invalid ~ .invalid-tooltip, .form-check-input.is-invalid ~ .invalid-feedback,
-.form-check-input.is-invalid ~ .invalid-tooltip {
+.was-validated .form-check-input:invalid ~ .invalid-tooltip, .form-check-input.is-invalid ~ .invalid-feedback, .frm_forms input.form-check-input[type=text][aria-invalid=true] ~ .invalid-feedback, .frm_forms input.form-check-input[type=email][aria-invalid=true] ~ .invalid-feedback, .frm_forms input.form-check-input[type=tel][aria-invalid=true] ~ .invalid-feedback, .frm_forms textarea.form-check-input[aria-invalid=true] ~ .invalid-feedback,
+.form-check-input.is-invalid ~ .invalid-tooltip,
+.frm_forms input.form-check-input[type=text][aria-invalid=true] ~ .invalid-tooltip,
+.frm_forms input.form-check-input[type=email][aria-invalid=true] ~ .invalid-tooltip,
+.frm_forms input.form-check-input[type=tel][aria-invalid=true] ~ .invalid-tooltip,
+.frm_forms textarea.form-check-input[aria-invalid=true] ~ .invalid-tooltip {
   display: block;
 }
 
-.was-validated .custom-control-input:invalid ~ .custom-control-label, .custom-control-input.is-invalid ~ .custom-control-label {
+.was-validated .custom-control-input:invalid ~ .custom-control-label, .custom-control-input.is-invalid ~ .custom-control-label, .frm_forms input.custom-control-input[type=text][aria-invalid=true] ~ .custom-control-label, .frm_forms input.custom-control-input[type=email][aria-invalid=true] ~ .custom-control-label, .frm_forms input.custom-control-input[type=tel][aria-invalid=true] ~ .custom-control-label, .frm_forms textarea.custom-control-input[aria-invalid=true] ~ .custom-control-label {
   color: #dc3545;
 }
-.was-validated .custom-control-input:invalid ~ .custom-control-label::before, .custom-control-input.is-invalid ~ .custom-control-label::before {
+.was-validated .custom-control-input:invalid ~ .custom-control-label::before, .custom-control-input.is-invalid ~ .custom-control-label::before, .frm_forms input.custom-control-input[type=text][aria-invalid=true] ~ .custom-control-label::before, .frm_forms input.custom-control-input[type=email][aria-invalid=true] ~ .custom-control-label::before, .frm_forms input.custom-control-input[type=tel][aria-invalid=true] ~ .custom-control-label::before, .frm_forms textarea.custom-control-input[aria-invalid=true] ~ .custom-control-label::before {
   border-color: #dc3545;
 }
-.was-validated .custom-control-input:invalid:checked ~ .custom-control-label::before, .custom-control-input.is-invalid:checked ~ .custom-control-label::before {
+.was-validated .custom-control-input:invalid:checked ~ .custom-control-label::before, .custom-control-input.is-invalid:checked ~ .custom-control-label::before, .frm_forms input.custom-control-input[type=text][aria-invalid=true]:checked ~ .custom-control-label::before, .frm_forms input.custom-control-input[type=email][aria-invalid=true]:checked ~ .custom-control-label::before, .frm_forms input.custom-control-input[type=tel][aria-invalid=true]:checked ~ .custom-control-label::before, .frm_forms textarea.custom-control-input[aria-invalid=true]:checked ~ .custom-control-label::before {
   border-color: #e4606d;
   background-color: #e4606d;
 }
-.was-validated .custom-control-input:invalid:focus ~ .custom-control-label::before, .custom-control-input.is-invalid:focus ~ .custom-control-label::before {
+.was-validated .custom-control-input:invalid:focus ~ .custom-control-label::before, .custom-control-input.is-invalid:focus ~ .custom-control-label::before, .frm_forms input.custom-control-input[type=text][aria-invalid=true]:focus ~ .custom-control-label::before, .frm_forms input.custom-control-input[type=email][aria-invalid=true]:focus ~ .custom-control-label::before, .frm_forms input.custom-control-input[type=tel][aria-invalid=true]:focus ~ .custom-control-label::before, .frm_forms textarea.custom-control-input[aria-invalid=true]:focus ~ .custom-control-label::before {
   box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
 }
-.was-validated .custom-control-input:invalid:focus:not(:checked) ~ .custom-control-label::before, .custom-control-input.is-invalid:focus:not(:checked) ~ .custom-control-label::before {
+.was-validated .custom-control-input:invalid:focus:not(:checked) ~ .custom-control-label::before, .custom-control-input.is-invalid:focus:not(:checked) ~ .custom-control-label::before, .frm_forms input.custom-control-input[type=text][aria-invalid=true]:focus:not(:checked) ~ .custom-control-label::before, .frm_forms input.custom-control-input[type=email][aria-invalid=true]:focus:not(:checked) ~ .custom-control-label::before, .frm_forms input.custom-control-input[type=tel][aria-invalid=true]:focus:not(:checked) ~ .custom-control-label::before, .frm_forms textarea.custom-control-input[aria-invalid=true]:focus:not(:checked) ~ .custom-control-label::before {
   border-color: #dc3545;
 }
 
-.was-validated .custom-file-input:invalid ~ .custom-file-label, .custom-file-input.is-invalid ~ .custom-file-label {
+.was-validated .custom-file-input:invalid ~ .custom-file-label, .custom-file-input.is-invalid ~ .custom-file-label, .frm_forms input.custom-file-input[type=text][aria-invalid=true] ~ .custom-file-label, .frm_forms input.custom-file-input[type=email][aria-invalid=true] ~ .custom-file-label, .frm_forms input.custom-file-input[type=tel][aria-invalid=true] ~ .custom-file-label, .frm_forms textarea.custom-file-input[aria-invalid=true] ~ .custom-file-label {
   border-color: #dc3545;
 }
-.was-validated .custom-file-input:invalid:focus ~ .custom-file-label, .custom-file-input.is-invalid:focus ~ .custom-file-label {
+.was-validated .custom-file-input:invalid:focus ~ .custom-file-label, .custom-file-input.is-invalid:focus ~ .custom-file-label, .frm_forms input.custom-file-input[type=text][aria-invalid=true]:focus ~ .custom-file-label, .frm_forms input.custom-file-input[type=email][aria-invalid=true]:focus ~ .custom-file-label, .frm_forms input.custom-file-input[type=tel][aria-invalid=true]:focus ~ .custom-file-label, .frm_forms textarea.custom-file-input[aria-invalid=true]:focus ~ .custom-file-label {
   border-color: #dc3545;
   box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
 }
@@ -2973,7 +2987,7 @@ textarea.form-control {
             justify-content: center;
     margin-bottom: 0;
   }
-  .form-inline .form-group {
+  .form-inline .form-group, .form-inline .frm_form_field {
     display: -webkit-box;
     display: flex;
     -webkit-box-flex: 0;
@@ -2985,7 +2999,7 @@ textarea.form-control {
             align-items: center;
     margin-bottom: 0;
   }
-  .form-inline .form-control {
+  .form-inline .form-control, .form-inline .frm_forms input[type=text], .frm_forms .form-inline input[type=text], .form-inline .frm_forms input[type=email], .frm_forms .form-inline input[type=email], .form-inline .frm_forms input[type=tel], .frm_forms .form-inline input[type=tel], .form-inline .frm_forms textarea, .frm_forms .form-inline textarea {
     display: inline-block;
     width: auto;
     vertical-align: middle;
@@ -3025,7 +3039,7 @@ textarea.form-control {
   }
 }
 
-.btn {
+.btn, .frm_button_submit, .wp-block-file.frm_button_submit > a, .wp-block-file.frm_button_submit > a.wp-block-file > a, .wp-block-file.btn > a, .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a, .wp-block-file.btn > a.wp-block-file > a, .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file > a {
   display: inline-block;
   font-family: "Raleway", sans-serif;
   font-weight: 300;
@@ -3047,84 +3061,91 @@ textarea.form-control {
   transition: 0.6s all;
 }
 @media (prefers-reduced-motion: reduce) {
-  .btn {
+  .btn, .frm_button_submit, .wp-block-file.frm_button_submit > a, .wp-block-file.frm_button_submit > a.wp-block-file > a, .wp-block-file.btn > a, .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a, .wp-block-file.btn > a.wp-block-file > a, .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file > a {
     -webkit-transition: none;
     transition: none;
   }
 }
-.btn:hover {
+.btn:hover, .frm_button_submit:hover, .wp-block-file.frm_button_submit > a:hover, .wp-block-file.frm_button_submit > a.wp-block-file > a:hover, .wp-block-file.btn > a:hover, .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a:hover, .wp-block-file.btn > a.wp-block-file > a:hover, .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file > a:hover {
   color: #2E2F33;
   text-decoration: none;
 }
-.btn:focus, .btn.focus {
+.btn:focus, .frm_button_submit:focus, .wp-block-file.frm_button_submit > a:focus, .wp-block-file.frm_button_submit > a.wp-block-file > a:focus, .wp-block-file.btn > a:focus, .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a:focus, .wp-block-file.btn > a.wp-block-file > a:focus, .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file > a:focus, .btn.focus, .focus.frm_button_submit, .wp-block-file.frm_button_submit > a.focus, .wp-block-file.frm_button_submit > a.wp-block-file > a.focus, .wp-block-file.btn > a.focus, .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.focus, .wp-block-file.btn > a.wp-block-file > a.focus, .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file > a.focus {
   outline: 0;
   box-shadow: 0 0 0 0.2rem rgba(255, 213, 128, 0.25);
 }
-.btn.disabled, .btn:disabled {
+.btn.disabled, .disabled.frm_button_submit, .wp-block-file.frm_button_submit > a.disabled, .wp-block-file.frm_button_submit > a.wp-block-file > a.disabled, .wp-block-file.btn > a.disabled, .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.disabled, .wp-block-file.btn > a.wp-block-file > a.disabled, .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file > a.disabled, .btn:disabled, .frm_button_submit:disabled, .wp-block-file.frm_button_submit > a:disabled, .wp-block-file.frm_button_submit > a.wp-block-file > a:disabled, .wp-block-file.btn > a:disabled, .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a:disabled, .wp-block-file.btn > a.wp-block-file > a:disabled, .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file > a:disabled {
   opacity: 0.65;
 }
-a.btn.disabled,
-fieldset:disabled a.btn {
+a.btn.disabled, a.disabled.frm_button_submit, .wp-block-file.frm_button_submit > a.disabled, .wp-block-file.frm_button_submit > a.wp-block-file > a.disabled, .wp-block-file.btn > a.disabled, .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.disabled, .wp-block-file.btn > a.wp-block-file > a.disabled, .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file > a.disabled,
+fieldset:disabled a.btn,
+fieldset:disabled a.frm_button_submit,
+fieldset:disabled .wp-block-file.frm_button_submit > a,
+fieldset:disabled .wp-block-file.frm_button_submit > a.wp-block-file > a,
+fieldset:disabled .wp-block-file.btn > a,
+fieldset:disabled .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a,
+fieldset:disabled .wp-block-file.btn > a.wp-block-file > a,
+fieldset:disabled .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file > a {
   pointer-events: none;
 }
 
-.btn-primary {
+.btn-primary, .frm_button_submit, .wp-block-file.frm_button_submit > a, .wp-block-file.btn-primary > a, .wp-block-file.frm_button_submit > a.wp-block-file > a {
   color: #2E2F33;
   background-color: #FFD580;
   border-color: #FFD580;
 }
-.btn-primary:hover {
+.btn-primary:hover, .frm_button_submit:hover, .wp-block-file.frm_button_submit > a:hover, .wp-block-file.btn-primary > a:hover, .wp-block-file.frm_button_submit > a.wp-block-file > a:hover {
   color: #2E2F33;
   background-color: #ffc85a;
   border-color: #ffc44d;
 }
-.btn-primary:focus, .btn-primary.focus {
+.btn-primary:focus, .frm_button_submit:focus, .wp-block-file.frm_button_submit > a:focus, .wp-block-file.btn-primary > a:focus, .wp-block-file.frm_button_submit > a.wp-block-file > a:focus, .btn-primary.focus, .focus.frm_button_submit, .wp-block-file.frm_button_submit > a.focus, .wp-block-file.btn-primary > a.focus, .wp-block-file.frm_button_submit > a.wp-block-file > a.focus {
   color: #2E2F33;
   background-color: #ffc85a;
   border-color: #ffc44d;
   box-shadow: 0 0 0 0.2rem rgba(224, 188, 116, 0.5);
 }
-.btn-primary.disabled, .btn-primary:disabled {
+.btn-primary.disabled, .disabled.frm_button_submit, .wp-block-file.frm_button_submit > a.disabled, .wp-block-file.btn-primary > a.disabled, .wp-block-file.frm_button_submit > a.wp-block-file > a.disabled, .btn-primary:disabled, .frm_button_submit:disabled, .wp-block-file.frm_button_submit > a:disabled, .wp-block-file.btn-primary > a:disabled, .wp-block-file.frm_button_submit > a.wp-block-file > a:disabled {
   color: #2E2F33;
   background-color: #FFD580;
   border-color: #FFD580;
 }
-.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
+.btn-primary:not(:disabled):not(.disabled):active, .frm_button_submit:not(:disabled):not(.disabled):active, .wp-block-file.frm_button_submit > a:not(:disabled):not(.disabled):active, .wp-block-file.btn-primary > a:not(:disabled):not(.disabled):active, .wp-block-file.frm_button_submit > a.wp-block-file > a:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .frm_button_submit:not(:disabled):not(.disabled).active, .wp-block-file.frm_button_submit > a:not(:disabled):not(.disabled).active, .wp-block-file.btn-primary > a:not(:disabled):not(.disabled).active, .wp-block-file.frm_button_submit > a.wp-block-file > a:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle, .show > .dropdown-toggle.frm_button_submit, .wp-block-file.frm_button_submit.show > a.dropdown-toggle, .wp-block-file.btn-primary.show > a.dropdown-toggle, .wp-block-file.frm_button_submit > a.wp-block-file.show > a.dropdown-toggle {
   color: #2E2F33;
   background-color: #ffc44d;
   border-color: #ffc040;
 }
-.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .show > .btn-primary.dropdown-toggle:focus {
+.btn-primary:not(:disabled):not(.disabled):active:focus, .frm_button_submit:not(:disabled):not(.disabled):active:focus, .wp-block-file.frm_button_submit > a:not(:disabled):not(.disabled):active:focus, .wp-block-file.btn-primary > a:not(:disabled):not(.disabled):active:focus, .wp-block-file.frm_button_submit > a.wp-block-file > a:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .frm_button_submit:not(:disabled):not(.disabled).active:focus, .wp-block-file.frm_button_submit > a:not(:disabled):not(.disabled).active:focus, .wp-block-file.btn-primary > a:not(:disabled):not(.disabled).active:focus, .wp-block-file.frm_button_submit > a.wp-block-file > a:not(:disabled):not(.disabled).active:focus, .show > .btn-primary.dropdown-toggle:focus, .show > .dropdown-toggle.frm_button_submit:focus, .wp-block-file.frm_button_submit.show > a.dropdown-toggle:focus, .wp-block-file.btn-primary.show > a.dropdown-toggle:focus, .wp-block-file.frm_button_submit > a.wp-block-file.show > a.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgba(224, 188, 116, 0.5);
 }
 
-.btn-secondary {
+.btn-secondary, .wp-block-file.btn-secondary > a {
   color: #fff;
   background-color: #384966;
   border-color: #384966;
 }
-.btn-secondary:hover {
+.btn-secondary:hover, .wp-block-file.btn-secondary > a:hover {
   color: #fff;
   background-color: #2a374d;
   border-color: #263145;
 }
-.btn-secondary:focus, .btn-secondary.focus {
+.btn-secondary:focus, .wp-block-file.btn-secondary > a:focus, .btn-secondary.focus, .wp-block-file.btn-secondary > a.focus {
   color: #fff;
   background-color: #2a374d;
   border-color: #263145;
   box-shadow: 0 0 0 0.2rem rgba(86, 100, 125, 0.5);
 }
-.btn-secondary.disabled, .btn-secondary:disabled {
+.btn-secondary.disabled, .wp-block-file.btn-secondary > a.disabled, .btn-secondary:disabled, .wp-block-file.btn-secondary > a:disabled {
   color: #fff;
   background-color: #384966;
   border-color: #384966;
 }
-.btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active, .show > .btn-secondary.dropdown-toggle {
+.btn-secondary:not(:disabled):not(.disabled):active, .wp-block-file.btn-secondary > a:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active, .wp-block-file.btn-secondary > a:not(:disabled):not(.disabled).active, .show > .btn-secondary.dropdown-toggle, .wp-block-file.btn-secondary.show > a.dropdown-toggle {
   color: #fff;
   background-color: #263145;
   border-color: #212c3d;
 }
-.btn-secondary:not(:disabled):not(.disabled):active:focus, .btn-secondary:not(:disabled):not(.disabled).active:focus, .show > .btn-secondary.dropdown-toggle:focus {
+.btn-secondary:not(:disabled):not(.disabled):active:focus, .wp-block-file.btn-secondary > a:not(:disabled):not(.disabled):active:focus, .btn-secondary:not(:disabled):not(.disabled).active:focus, .wp-block-file.btn-secondary > a:not(:disabled):not(.disabled).active:focus, .show > .btn-secondary.dropdown-toggle:focus, .wp-block-file.btn-secondary.show > a.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgba(86, 100, 125, 0.5);
 }
 
@@ -4461,14 +4482,14 @@ fieldset:disabled a.btn {
   pointer-events: none;
 }
 
-.btn-lg, .btn-group-lg > .btn {
+.btn-lg, .btn-group-lg > .btn, .btn-group-lg > .frm_button_submit, .wp-block-file.frm_button_submit.btn-group-lg > a, .wp-block-file.frm_button_submit > a.wp-block-file.btn-group-lg > a, .wp-block-file.btn.btn-group-lg > a, .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file.btn-group-lg > a, .wp-block-file.btn > a.wp-block-file.btn-group-lg > a, .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file.btn-group-lg > a {
   padding: 0.625rem 1.875rem;
   font-size: 1.125rem;
   line-height: 1.5;
   border-radius: 3rem;
 }
 
-.btn-sm, .btn-group-sm > .btn {
+.btn-sm, .btn-group-sm > .btn, .btn-group-sm > .frm_button_submit, .wp-block-file.frm_button_submit.btn-group-sm > a, .wp-block-file.frm_button_submit > a.wp-block-file.btn-group-sm > a, .wp-block-file.btn.btn-group-sm > a, .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file.btn-group-sm > a, .wp-block-file.btn > a.wp-block-file.btn-group-sm > a, .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file.btn-group-sm > a {
   padding: 0.25rem 0.5rem;
   font-size: 0.5rem;
   line-height: 1.5;
@@ -4761,20 +4782,55 @@ input[type=button].btn-block {
   display: inline-flex;
   vertical-align: middle;
 }
-.btn-group > .btn,
-.btn-group-vertical > .btn {
+.btn-group > .btn, .btn-group > .frm_button_submit, .wp-block-file.frm_button_submit.btn-group > a, .wp-block-file.frm_button_submit > a.wp-block-file.btn-group > a, .wp-block-file.btn.btn-group > a, .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file.btn-group > a, .wp-block-file.btn > a.wp-block-file.btn-group > a, .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file.btn-group > a,
+.btn-group-vertical > .btn,
+.btn-group-vertical > .frm_button_submit,
+.wp-block-file.frm_button_submit.btn-group-vertical > a,
+.wp-block-file.frm_button_submit > a.wp-block-file.btn-group-vertical > a,
+.wp-block-file.btn.btn-group-vertical > a,
+.wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file.btn-group-vertical > a,
+.wp-block-file.btn > a.wp-block-file.btn-group-vertical > a,
+.wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file.btn-group-vertical > a {
   position: relative;
   -webkit-box-flex: 1;
           flex: 1 1 auto;
 }
-.btn-group > .btn:hover,
-.btn-group-vertical > .btn:hover {
+.btn-group > .btn:hover, .btn-group > .frm_button_submit:hover, .wp-block-file.frm_button_submit.btn-group > a:hover, .wp-block-file.frm_button_submit > a.wp-block-file.btn-group > a:hover, .wp-block-file.btn.btn-group > a:hover, .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file.btn-group > a:hover, .wp-block-file.btn > a.wp-block-file.btn-group > a:hover, .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file.btn-group > a:hover,
+.btn-group-vertical > .btn:hover,
+.btn-group-vertical > .frm_button_submit:hover,
+.wp-block-file.frm_button_submit.btn-group-vertical > a:hover,
+.wp-block-file.frm_button_submit > a.wp-block-file.btn-group-vertical > a:hover,
+.wp-block-file.btn.btn-group-vertical > a:hover,
+.wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file.btn-group-vertical > a:hover,
+.wp-block-file.btn > a.wp-block-file.btn-group-vertical > a:hover,
+.wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file.btn-group-vertical > a:hover {
   z-index: 1;
 }
-.btn-group > .btn:focus, .btn-group > .btn:active, .btn-group > .btn.active,
+.btn-group > .btn:focus, .btn-group > .frm_button_submit:focus, .wp-block-file.frm_button_submit.btn-group > a:focus, .wp-block-file.frm_button_submit > a.wp-block-file.btn-group > a:focus, .wp-block-file.btn.btn-group > a:focus, .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file.btn-group > a:focus, .wp-block-file.btn > a.wp-block-file.btn-group > a:focus, .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file.btn-group > a:focus, .btn-group > .btn:active, .btn-group > .frm_button_submit:active, .wp-block-file.frm_button_submit.btn-group > a:active, .wp-block-file.frm_button_submit > a.wp-block-file.btn-group > a:active, .wp-block-file.btn.btn-group > a:active, .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file.btn-group > a:active, .wp-block-file.btn > a.wp-block-file.btn-group > a:active, .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file.btn-group > a:active, .btn-group > .btn.active, .btn-group > .active.frm_button_submit, .wp-block-file.frm_button_submit.btn-group > a.active, .wp-block-file.frm_button_submit > a.wp-block-file.btn-group > a.active, .wp-block-file.btn.btn-group > a.active, .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file.btn-group > a.active, .wp-block-file.btn > a.wp-block-file.btn-group > a.active, .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file.btn-group > a.active,
 .btn-group-vertical > .btn:focus,
+.btn-group-vertical > .frm_button_submit:focus,
+.wp-block-file.frm_button_submit.btn-group-vertical > a:focus,
+.wp-block-file.frm_button_submit > a.wp-block-file.btn-group-vertical > a:focus,
+.wp-block-file.btn.btn-group-vertical > a:focus,
+.wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file.btn-group-vertical > a:focus,
+.wp-block-file.btn > a.wp-block-file.btn-group-vertical > a:focus,
+.wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file.btn-group-vertical > a:focus,
 .btn-group-vertical > .btn:active,
-.btn-group-vertical > .btn.active {
+.btn-group-vertical > .frm_button_submit:active,
+.wp-block-file.frm_button_submit.btn-group-vertical > a:active,
+.wp-block-file.frm_button_submit > a.wp-block-file.btn-group-vertical > a:active,
+.wp-block-file.btn.btn-group-vertical > a:active,
+.wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file.btn-group-vertical > a:active,
+.wp-block-file.btn > a.wp-block-file.btn-group-vertical > a:active,
+.wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file.btn-group-vertical > a:active,
+.btn-group-vertical > .btn.active,
+.btn-group-vertical > .active.frm_button_submit,
+.wp-block-file.frm_button_submit.btn-group-vertical > a.active,
+.wp-block-file.frm_button_submit > a.wp-block-file.btn-group-vertical > a.active,
+.wp-block-file.btn.btn-group-vertical > a.active,
+.wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file.btn-group-vertical > a.active,
+.wp-block-file.btn > a.wp-block-file.btn-group-vertical > a.active,
+.wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file.btn-group-vertical > a.active {
   z-index: 1;
 }
 
@@ -4789,17 +4845,29 @@ input[type=button].btn-block {
   width: auto;
 }
 
-.btn-group > .btn:not(:first-child),
+.btn-group > .btn:not(:first-child), .btn-group > .frm_button_submit:not(:first-child), .wp-block-file.frm_button_submit.btn-group > a:not(:first-child), .wp-block-file.frm_button_submit > a.wp-block-file.btn-group > a:not(:first-child), .wp-block-file.btn.btn-group > a:not(:first-child), .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file.btn-group > a:not(:first-child), .wp-block-file.btn > a.wp-block-file.btn-group > a:not(:first-child), .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file.btn-group > a:not(:first-child),
 .btn-group > .btn-group:not(:first-child) {
   margin-left: -1px;
 }
-.btn-group > .btn:not(:last-child):not(.dropdown-toggle),
-.btn-group > .btn-group:not(:last-child) > .btn {
+.btn-group > .btn:not(:last-child):not(.dropdown-toggle), .btn-group > .frm_button_submit:not(:last-child):not(.dropdown-toggle), .wp-block-file.frm_button_submit.btn-group > a:not(:last-child):not(.dropdown-toggle), .wp-block-file.frm_button_submit > a.wp-block-file.btn-group > a:not(:last-child):not(.dropdown-toggle), .wp-block-file.btn.btn-group > a:not(:last-child):not(.dropdown-toggle), .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file.btn-group > a:not(:last-child):not(.dropdown-toggle), .wp-block-file.btn > a.wp-block-file.btn-group > a:not(:last-child):not(.dropdown-toggle), .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file.btn-group > a:not(:last-child):not(.dropdown-toggle),
+.btn-group > .btn-group:not(:last-child) > .btn,
+.btn-group > .btn-group:not(:last-child) > .frm_button_submit,
+.btn-group > .wp-block-file.frm_button_submit.btn-group:not(:last-child) > a,
+.wp-block-file.frm_button_submit.btn-group > a.wp-block-file.btn-group:not(:last-child) > a,
+.btn-group > .wp-block-file.btn.btn-group:not(:last-child) > a,
+.wp-block-file.frm_button_submit > a.wp-block-file.btn-group > a.wp-block-file.btn-group:not(:last-child) > a,
+.wp-block-file.btn.btn-group > a.wp-block-file.btn-group:not(:last-child) > a {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-.btn-group > .btn:not(:first-child),
-.btn-group > .btn-group:not(:first-child) > .btn {
+.btn-group > .btn:not(:first-child), .btn-group > .frm_button_submit:not(:first-child), .wp-block-file.frm_button_submit.btn-group > a:not(:first-child), .wp-block-file.frm_button_submit > a.wp-block-file.btn-group > a:not(:first-child), .wp-block-file.btn.btn-group > a:not(:first-child), .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file.btn-group > a:not(:first-child), .wp-block-file.btn > a.wp-block-file.btn-group > a:not(:first-child), .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file.btn-group > a:not(:first-child),
+.btn-group > .btn-group:not(:first-child) > .btn,
+.btn-group > .btn-group:not(:first-child) > .frm_button_submit,
+.btn-group > .wp-block-file.frm_button_submit.btn-group:not(:first-child) > a,
+.wp-block-file.frm_button_submit.btn-group > a.wp-block-file.btn-group:not(:first-child) > a,
+.btn-group > .wp-block-file.btn.btn-group:not(:first-child) > a,
+.wp-block-file.frm_button_submit > a.wp-block-file.btn-group > a.wp-block-file.btn-group:not(:first-child) > a,
+.wp-block-file.btn.btn-group > a.wp-block-file.btn-group:not(:first-child) > a {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
@@ -4815,12 +4883,12 @@ input[type=button].btn-block {
   margin-right: 0;
 }
 
-.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split {
+.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, .btn-group-sm > .frm_button_submit + .dropdown-toggle-split, .wp-block-file.frm_button_submit.btn-group-sm > a + .dropdown-toggle-split, .wp-block-file.frm_button_submit > a.wp-block-file.btn-group-sm > a + .dropdown-toggle-split, .wp-block-file.btn.btn-group-sm > a + .dropdown-toggle-split, .wp-block-file.btn > a.wp-block-file.btn-group-sm > a + .dropdown-toggle-split {
   padding-right: 0.375rem;
   padding-left: 0.375rem;
 }
 
-.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split {
+.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, .btn-group-lg > .frm_button_submit + .dropdown-toggle-split, .wp-block-file.frm_button_submit.btn-group-lg > a + .dropdown-toggle-split, .wp-block-file.frm_button_submit > a.wp-block-file.btn-group-lg > a + .dropdown-toggle-split, .wp-block-file.btn.btn-group-lg > a + .dropdown-toggle-split, .wp-block-file.btn > a.wp-block-file.btn-group-lg > a + .dropdown-toggle-split {
   padding-right: 1.40625rem;
   padding-left: 1.40625rem;
 }
@@ -4834,31 +4902,54 @@ input[type=button].btn-block {
   -webkit-box-pack: center;
           justify-content: center;
 }
-.btn-group-vertical > .btn,
+.btn-group-vertical > .btn, .btn-group-vertical > .frm_button_submit, .wp-block-file.frm_button_submit.btn-group-vertical > a, .wp-block-file.frm_button_submit > a.wp-block-file.btn-group-vertical > a, .wp-block-file.btn.btn-group-vertical > a, .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file.btn-group-vertical > a, .wp-block-file.btn > a.wp-block-file.btn-group-vertical > a, .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file.btn-group-vertical > a,
 .btn-group-vertical > .btn-group {
   width: 100%;
 }
-.btn-group-vertical > .btn:not(:first-child),
+.btn-group-vertical > .btn:not(:first-child), .btn-group-vertical > .frm_button_submit:not(:first-child), .wp-block-file.frm_button_submit.btn-group-vertical > a:not(:first-child), .wp-block-file.frm_button_submit > a.wp-block-file.btn-group-vertical > a:not(:first-child), .wp-block-file.btn.btn-group-vertical > a:not(:first-child), .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file.btn-group-vertical > a:not(:first-child), .wp-block-file.btn > a.wp-block-file.btn-group-vertical > a:not(:first-child), .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file.btn-group-vertical > a:not(:first-child),
 .btn-group-vertical > .btn-group:not(:first-child) {
   margin-top: -1px;
 }
-.btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle),
-.btn-group-vertical > .btn-group:not(:last-child) > .btn {
+.btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .frm_button_submit:not(:last-child):not(.dropdown-toggle), .wp-block-file.frm_button_submit.btn-group-vertical > a:not(:last-child):not(.dropdown-toggle), .wp-block-file.frm_button_submit > a.wp-block-file.btn-group-vertical > a:not(:last-child):not(.dropdown-toggle), .wp-block-file.btn.btn-group-vertical > a:not(:last-child):not(.dropdown-toggle), .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file.btn-group-vertical > a:not(:last-child):not(.dropdown-toggle), .wp-block-file.btn > a.wp-block-file.btn-group-vertical > a:not(:last-child):not(.dropdown-toggle), .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file.btn-group-vertical > a:not(:last-child):not(.dropdown-toggle),
+.btn-group-vertical > .btn-group:not(:last-child) > .btn,
+.btn-group-vertical > .btn-group:not(:last-child) > .frm_button_submit,
+.btn-group-vertical > .wp-block-file.frm_button_submit.btn-group:not(:last-child) > a,
+.wp-block-file.frm_button_submit.btn-group-vertical > a.wp-block-file.btn-group:not(:last-child) > a,
+.btn-group-vertical > .wp-block-file.btn.btn-group:not(:last-child) > a,
+.wp-block-file.frm_button_submit > a.wp-block-file.btn-group-vertical > a.wp-block-file.btn-group:not(:last-child) > a,
+.wp-block-file.btn.btn-group-vertical > a.wp-block-file.btn-group:not(:last-child) > a {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
-.btn-group-vertical > .btn:not(:first-child),
-.btn-group-vertical > .btn-group:not(:first-child) > .btn {
+.btn-group-vertical > .btn:not(:first-child), .btn-group-vertical > .frm_button_submit:not(:first-child), .wp-block-file.frm_button_submit.btn-group-vertical > a:not(:first-child), .wp-block-file.frm_button_submit > a.wp-block-file.btn-group-vertical > a:not(:first-child), .wp-block-file.btn.btn-group-vertical > a:not(:first-child), .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file.btn-group-vertical > a:not(:first-child), .wp-block-file.btn > a.wp-block-file.btn-group-vertical > a:not(:first-child), .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file.btn-group-vertical > a:not(:first-child),
+.btn-group-vertical > .btn-group:not(:first-child) > .btn,
+.btn-group-vertical > .btn-group:not(:first-child) > .frm_button_submit,
+.btn-group-vertical > .wp-block-file.frm_button_submit.btn-group:not(:first-child) > a,
+.wp-block-file.frm_button_submit.btn-group-vertical > a.wp-block-file.btn-group:not(:first-child) > a,
+.btn-group-vertical > .wp-block-file.btn.btn-group:not(:first-child) > a,
+.wp-block-file.frm_button_submit > a.wp-block-file.btn-group-vertical > a.wp-block-file.btn-group:not(:first-child) > a,
+.wp-block-file.btn.btn-group-vertical > a.wp-block-file.btn-group:not(:first-child) > a {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
 
-.btn-group-toggle > .btn,
-.btn-group-toggle > .btn-group > .btn {
+.btn-group-toggle > .btn, .btn-group-toggle > .frm_button_submit, .wp-block-file.frm_button_submit.btn-group-toggle > a, .wp-block-file.frm_button_submit > a.wp-block-file.btn-group-toggle > a, .wp-block-file.btn.btn-group-toggle > a, .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file.btn-group-toggle > a, .wp-block-file.btn > a.wp-block-file.btn-group-toggle > a, .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file.btn-group-toggle > a,
+.btn-group-toggle > .btn-group > .btn,
+.btn-group-toggle > .btn-group > .frm_button_submit,
+.btn-group-toggle > .wp-block-file.frm_button_submit.btn-group > a,
+.wp-block-file.frm_button_submit.btn-group-toggle > a.wp-block-file.btn-group > a,
+.btn-group-toggle > .wp-block-file.btn.btn-group > a,
+.wp-block-file.frm_button_submit > a.wp-block-file.btn-group-toggle > a.wp-block-file.btn-group > a,
+.wp-block-file.btn.btn-group-toggle > a.wp-block-file.btn-group > a {
   margin-bottom: 0;
 }
-.btn-group-toggle > .btn input[type=radio],
+.btn-group-toggle > .btn input[type=radio], .btn-group-toggle > .frm_button_submit input[type=radio], .wp-block-file.frm_button_submit.btn-group-toggle > a input[type=radio], .wp-block-file.frm_button_submit > a.wp-block-file.btn-group-toggle > a input[type=radio], .wp-block-file.btn.btn-group-toggle > a input[type=radio], .wp-block-file.btn > a.wp-block-file.btn-group-toggle > a input[type=radio],
 .btn-group-toggle > .btn input[type=checkbox],
+.btn-group-toggle > .frm_button_submit input[type=checkbox],
+.wp-block-file.frm_button_submit.btn-group-toggle > a input[type=checkbox],
+.wp-block-file.frm_button_submit > a.wp-block-file.btn-group-toggle > a input[type=checkbox],
+.wp-block-file.btn.btn-group-toggle > a input[type=checkbox],
+.wp-block-file.btn > a.wp-block-file.btn-group-toggle > a input[type=checkbox],
 .btn-group-toggle > .btn-group > .btn input[type=radio],
 .btn-group-toggle > .btn-group > .btn input[type=checkbox] {
   position: absolute;
@@ -4875,7 +4966,7 @@ input[type=button].btn-block {
           align-items: stretch;
   width: 100%;
 }
-.input-group > .form-control,
+.input-group > .form-control, .frm_forms .input-group > input[type=text], .frm_forms .input-group > input[type=email], .frm_forms .input-group > input[type=tel], .frm_forms .input-group > textarea,
 .input-group > .form-control-plaintext,
 .input-group > .custom-select,
 .input-group > .custom-file {
@@ -4885,21 +4976,41 @@ input[type=button].btn-block {
   min-width: 0;
   margin-bottom: 0;
 }
-.input-group > .form-control + .form-control,
+.input-group > .form-control + .form-control, .frm_forms .input-group > input[type=text] + .form-control, .frm_forms .input-group > input[type=email] + .form-control, .frm_forms .input-group > input[type=tel] + .form-control, .frm_forms .input-group > textarea + .form-control, .frm_forms .input-group > .form-control + input[type=text], .frm_forms .input-group > input[type=text] + input[type=text], .frm_forms .input-group > input[type=email] + input[type=text], .frm_forms .input-group > input[type=tel] + input[type=text], .frm_forms .input-group > textarea + input[type=text], .frm_forms .input-group > .form-control + input[type=email], .frm_forms .input-group > input[type=text] + input[type=email], .frm_forms .input-group > input[type=email] + input[type=email], .frm_forms .input-group > input[type=tel] + input[type=email], .frm_forms .input-group > textarea + input[type=email], .frm_forms .input-group > .form-control + input[type=tel], .frm_forms .input-group > input[type=text] + input[type=tel], .frm_forms .input-group > input[type=email] + input[type=tel], .frm_forms .input-group > input[type=tel] + input[type=tel], .frm_forms .input-group > textarea + input[type=tel], .frm_forms .input-group > .form-control + textarea, .frm_forms .input-group > input[type=text] + textarea, .frm_forms .input-group > input[type=email] + textarea, .frm_forms .input-group > input[type=tel] + textarea, .frm_forms .input-group > textarea + textarea,
 .input-group > .form-control + .custom-select,
+.frm_forms .input-group > input[type=text] + .custom-select,
+.frm_forms .input-group > input[type=email] + .custom-select,
+.frm_forms .input-group > input[type=tel] + .custom-select,
+.frm_forms .input-group > textarea + .custom-select,
 .input-group > .form-control + .custom-file,
+.frm_forms .input-group > input[type=text] + .custom-file,
+.frm_forms .input-group > input[type=email] + .custom-file,
+.frm_forms .input-group > input[type=tel] + .custom-file,
+.frm_forms .input-group > textarea + .custom-file,
 .input-group > .form-control-plaintext + .form-control,
+.frm_forms .input-group > .form-control-plaintext + input[type=text],
+.frm_forms .input-group > .form-control-plaintext + input[type=email],
+.frm_forms .input-group > .form-control-plaintext + input[type=tel],
+.frm_forms .input-group > .form-control-plaintext + textarea,
 .input-group > .form-control-plaintext + .custom-select,
 .input-group > .form-control-plaintext + .custom-file,
 .input-group > .custom-select + .form-control,
+.frm_forms .input-group > .custom-select + input[type=text],
+.frm_forms .input-group > .custom-select + input[type=email],
+.frm_forms .input-group > .custom-select + input[type=tel],
+.frm_forms .input-group > .custom-select + textarea,
 .input-group > .custom-select + .custom-select,
 .input-group > .custom-select + .custom-file,
 .input-group > .custom-file + .form-control,
+.frm_forms .input-group > .custom-file + input[type=text],
+.frm_forms .input-group > .custom-file + input[type=email],
+.frm_forms .input-group > .custom-file + input[type=tel],
+.frm_forms .input-group > .custom-file + textarea,
 .input-group > .custom-file + .custom-select,
 .input-group > .custom-file + .custom-file {
   margin-left: -1px;
 }
-.input-group > .form-control:focus,
+.input-group > .form-control:focus, .frm_forms .input-group > input[type=text]:focus, .frm_forms .input-group > input[type=email]:focus, .frm_forms .input-group > input[type=tel]:focus, .frm_forms .input-group > textarea:focus,
 .input-group > .custom-select:focus,
 .input-group > .custom-file .custom-file-input:focus ~ .custom-file-label {
   z-index: 3;
@@ -4907,12 +5018,12 @@ input[type=button].btn-block {
 .input-group > .custom-file .custom-file-input:focus {
   z-index: 4;
 }
-.input-group > .form-control:not(:last-child),
+.input-group > .form-control:not(:last-child), .frm_forms .input-group > input[type=text]:not(:last-child), .frm_forms .input-group > input[type=email]:not(:last-child), .frm_forms .input-group > input[type=tel]:not(:last-child), .frm_forms .input-group > textarea:not(:last-child),
 .input-group > .custom-select:not(:last-child) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-.input-group > .form-control:not(:first-child),
+.input-group > .form-control:not(:first-child), .frm_forms .input-group > input[type=text]:not(:first-child), .frm_forms .input-group > input[type=email]:not(:first-child), .frm_forms .input-group > input[type=tel]:not(:first-child), .frm_forms .input-group > textarea:not(:first-child),
 .input-group > .custom-select:not(:first-child) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -4937,23 +5048,168 @@ input[type=button].btn-block {
   display: -webkit-box;
   display: flex;
 }
-.input-group-prepend .btn,
-.input-group-append .btn {
+.input-group-prepend .btn, .input-group-prepend .frm_button_submit, .input-group-prepend .wp-block-file.frm_button_submit > a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a, .input-group-prepend .wp-block-file.btn > a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a, .input-group-prepend .wp-block-file.btn > a.wp-block-file > a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file > a,
+.input-group-append .btn,
+.input-group-append .frm_button_submit,
+.input-group-append .wp-block-file.frm_button_submit > a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a,
+.input-group-append .wp-block-file.btn > a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a,
+.input-group-append .wp-block-file.btn > a.wp-block-file > a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file > a {
   position: relative;
   z-index: 2;
 }
-.input-group-prepend .btn:focus,
-.input-group-append .btn:focus {
+.input-group-prepend .btn:focus, .input-group-prepend .frm_button_submit:focus, .input-group-prepend .wp-block-file.frm_button_submit > a:focus, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a:focus, .input-group-prepend .wp-block-file.btn > a:focus, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a:focus, .input-group-prepend .wp-block-file.btn > a.wp-block-file > a:focus, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file > a:focus,
+.input-group-append .btn:focus,
+.input-group-append .frm_button_submit:focus,
+.input-group-append .wp-block-file.frm_button_submit > a:focus,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a:focus,
+.input-group-append .wp-block-file.btn > a:focus,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a:focus,
+.input-group-append .wp-block-file.btn > a.wp-block-file > a:focus,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file > a:focus {
   z-index: 3;
 }
-.input-group-prepend .btn + .btn,
+.input-group-prepend .btn + .btn, .input-group-prepend .frm_button_submit + .btn, .input-group-prepend .wp-block-file.frm_button_submit > a + .btn, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a + .btn, .input-group-prepend .btn + .frm_button_submit, .input-group-prepend .frm_button_submit + .frm_button_submit, .input-group-prepend .wp-block-file.frm_button_submit > a + .frm_button_submit, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a + .frm_button_submit, .input-group-prepend .wp-block-file.frm_button_submit > .btn + a, .input-group-prepend .wp-block-file.frm_button_submit > .frm_button_submit + a, .input-group-prepend .wp-block-file.frm_button_submit > a + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file.frm_button_submit > a + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > .btn + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > .frm_button_submit + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file.frm_button_submit > a + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a + a, .input-group-prepend .wp-block-file.btn > a + .btn, .input-group-prepend .wp-block-file.frm_button_submit > a + .btn, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a + .btn, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a + .btn, .input-group-prepend .wp-block-file.btn > a + .frm_button_submit, .input-group-prepend .wp-block-file.frm_button_submit > a + .frm_button_submit, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a + .frm_button_submit, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a + .frm_button_submit, .input-group-prepend .wp-block-file.frm_button_submit.btn > a + a, .input-group-prepend .wp-block-file.frm_button_submit > a + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file.frm_button_submit > a + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file.frm_button_submit > a + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file.btn > a + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file.frm_button_submit > a + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file.frm_button_submit > a.wp-block-file > a + a, .input-group-prepend .wp-block-file.btn > a.wp-block-file > a + .btn, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a + .btn, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a + .btn, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file > a + .btn, .input-group-prepend .wp-block-file.btn > a.wp-block-file > a + .frm_button_submit, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a + .frm_button_submit, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a + .frm_button_submit, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file > a + .frm_button_submit, .input-group-prepend .wp-block-file.btn > a.wp-block-file.frm_button_submit > a + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file.frm_button_submit > a + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file.frm_button_submit > a + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file.frm_button_submit > a + a, .input-group-prepend .wp-block-file.frm_button_submit.btn > a.wp-block-file > a + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file.frm_button_submit > a.wp-block-file > a + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file.frm_button_submit > a.wp-block-file > a + a, .input-group-prepend .wp-block-file.btn > .btn + a, .input-group-prepend .wp-block-file.frm_button_submit > .btn + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > .btn + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > .btn + a, .input-group-prepend .wp-block-file.btn > .frm_button_submit + a, .input-group-prepend .wp-block-file.frm_button_submit > .frm_button_submit + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > .frm_button_submit + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > .frm_button_submit + a, .input-group-prepend .wp-block-file.frm_button_submit.btn > a + a, .input-group-prepend .wp-block-file.frm_button_submit > a + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file.frm_button_submit > a + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file.frm_button_submit > a + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file.btn > a + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file.frm_button_submit > a + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file.frm_button_submit > a.wp-block-file > a + a, .input-group-prepend .wp-block-file.btn > a + a, .input-group-prepend .wp-block-file.frm_button_submit > a + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a + a, .input-group-prepend .wp-block-file.btn > a.wp-block-file > .btn + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > .btn + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > .btn + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file > .btn + a, .input-group-prepend .wp-block-file.btn > a.wp-block-file > .frm_button_submit + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > .frm_button_submit + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > .frm_button_submit + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file > .frm_button_submit + a, .input-group-prepend .wp-block-file.btn > a.wp-block-file.frm_button_submit > a + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file.frm_button_submit > a + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file.frm_button_submit > a + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file.frm_button_submit > a + a, .input-group-prepend .wp-block-file.frm_button_submit.btn > a.wp-block-file > a + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file.frm_button_submit > a.wp-block-file > a + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file.frm_button_submit > a.wp-block-file > a + a, .input-group-prepend .wp-block-file.btn > a.wp-block-file > a + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a + a, .input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file > a + a,
 .input-group-prepend .btn + .input-group-text,
+.input-group-prepend .frm_button_submit + .input-group-text,
+.input-group-prepend .wp-block-file.frm_button_submit > a + .input-group-text,
+.input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a + .input-group-text,
+.input-group-prepend .wp-block-file.btn > a + .input-group-text,
+.input-group-prepend .wp-block-file.frm_button_submit > a + .input-group-text,
+.input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a + .input-group-text,
+.input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a + .input-group-text,
+.input-group-prepend .wp-block-file.btn > a.wp-block-file > a + .input-group-text,
+.input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a + .input-group-text,
+.input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a + .input-group-text,
+.input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file > a + .input-group-text,
 .input-group-prepend .input-group-text + .input-group-text,
 .input-group-prepend .input-group-text + .btn,
+.input-group-prepend .input-group-text + .frm_button_submit,
+.input-group-prepend .wp-block-file.frm_button_submit > .input-group-text + a,
+.input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > .input-group-text + a,
+.input-group-prepend .wp-block-file.btn > .input-group-text + a,
+.input-group-prepend .wp-block-file.frm_button_submit > .input-group-text + a,
+.input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > .input-group-text + a,
+.input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > .input-group-text + a,
+.input-group-prepend .wp-block-file.btn > a.wp-block-file > .input-group-text + a,
+.input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > .input-group-text + a,
+.input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > .input-group-text + a,
+.input-group-prepend .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file > .input-group-text + a,
 .input-group-append .btn + .btn,
+.input-group-append .frm_button_submit + .btn,
+.input-group-append .wp-block-file.frm_button_submit > a + .btn,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a + .btn,
+.input-group-append .btn + .frm_button_submit,
+.input-group-append .frm_button_submit + .frm_button_submit,
+.input-group-append .wp-block-file.frm_button_submit > a + .frm_button_submit,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a + .frm_button_submit,
+.input-group-append .wp-block-file.frm_button_submit > .btn + a,
+.input-group-append .wp-block-file.frm_button_submit > .frm_button_submit + a,
+.input-group-append .wp-block-file.frm_button_submit > a + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file.frm_button_submit > a + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > .btn + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > .frm_button_submit + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file.frm_button_submit > a + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a + a,
+.input-group-append .wp-block-file.btn > a + .btn,
+.input-group-append .wp-block-file.frm_button_submit > a + .btn,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a + .btn,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a + .btn,
+.input-group-append .wp-block-file.btn > a + .frm_button_submit,
+.input-group-append .wp-block-file.frm_button_submit > a + .frm_button_submit,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a + .frm_button_submit,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a + .frm_button_submit,
+.input-group-append .wp-block-file.frm_button_submit.btn > a + a,
+.input-group-append .wp-block-file.frm_button_submit > a + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file.frm_button_submit > a + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file.frm_button_submit > a + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file.btn > a + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file.frm_button_submit > a + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file.frm_button_submit > a.wp-block-file > a + a,
+.input-group-append .wp-block-file.btn > a.wp-block-file > a + .btn,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a + .btn,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a + .btn,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file > a + .btn,
+.input-group-append .wp-block-file.btn > a.wp-block-file > a + .frm_button_submit,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a + .frm_button_submit,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a + .frm_button_submit,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file > a + .frm_button_submit,
+.input-group-append .wp-block-file.btn > a.wp-block-file.frm_button_submit > a + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file.frm_button_submit > a + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file.frm_button_submit > a + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file.frm_button_submit > a + a,
+.input-group-append .wp-block-file.frm_button_submit.btn > a.wp-block-file > a + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file.frm_button_submit > a.wp-block-file > a + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file.frm_button_submit > a.wp-block-file > a + a,
+.input-group-append .wp-block-file.btn > .btn + a,
+.input-group-append .wp-block-file.frm_button_submit > .btn + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > .btn + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > .btn + a,
+.input-group-append .wp-block-file.btn > .frm_button_submit + a,
+.input-group-append .wp-block-file.frm_button_submit > .frm_button_submit + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > .frm_button_submit + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > .frm_button_submit + a,
+.input-group-append .wp-block-file.frm_button_submit.btn > a + a,
+.input-group-append .wp-block-file.frm_button_submit > a + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file.frm_button_submit > a + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file.frm_button_submit > a + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file.btn > a + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file.frm_button_submit > a + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file.frm_button_submit > a.wp-block-file > a + a,
+.input-group-append .wp-block-file.btn > a + a,
+.input-group-append .wp-block-file.frm_button_submit > a + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a + a,
+.input-group-append .wp-block-file.btn > a.wp-block-file > .btn + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > .btn + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > .btn + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file > .btn + a,
+.input-group-append .wp-block-file.btn > a.wp-block-file > .frm_button_submit + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > .frm_button_submit + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > .frm_button_submit + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file > .frm_button_submit + a,
+.input-group-append .wp-block-file.btn > a.wp-block-file.frm_button_submit > a + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file.frm_button_submit > a + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file.frm_button_submit > a + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file.frm_button_submit > a + a,
+.input-group-append .wp-block-file.frm_button_submit.btn > a.wp-block-file > a + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file.frm_button_submit > a.wp-block-file > a + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file.frm_button_submit > a.wp-block-file > a + a,
+.input-group-append .wp-block-file.btn > a.wp-block-file > a + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file > a + a,
 .input-group-append .btn + .input-group-text,
+.input-group-append .frm_button_submit + .input-group-text,
+.input-group-append .wp-block-file.frm_button_submit > a + .input-group-text,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a + .input-group-text,
+.input-group-append .wp-block-file.btn > a + .input-group-text,
+.input-group-append .wp-block-file.frm_button_submit > a + .input-group-text,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a + .input-group-text,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a + .input-group-text,
+.input-group-append .wp-block-file.btn > a.wp-block-file > a + .input-group-text,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a + .input-group-text,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a + .input-group-text,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file > a + .input-group-text,
 .input-group-append .input-group-text + .input-group-text,
-.input-group-append .input-group-text + .btn {
+.input-group-append .input-group-text + .btn,
+.input-group-append .input-group-text + .frm_button_submit,
+.input-group-append .wp-block-file.frm_button_submit > .input-group-text + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > .input-group-text + a,
+.input-group-append .wp-block-file.btn > .input-group-text + a,
+.input-group-append .wp-block-file.frm_button_submit > .input-group-text + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > .input-group-text + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > .input-group-text + a,
+.input-group-append .wp-block-file.btn > a.wp-block-file > .input-group-text + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > .input-group-text + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > .input-group-text + a,
+.input-group-append .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file > .input-group-text + a {
   margin-left: -1px;
 }
 
@@ -4987,44 +5243,80 @@ input[type=button].btn-block {
   margin-top: 0;
 }
 
-.input-group-lg > .form-control:not(textarea),
+.input-group-lg > .form-control:not(textarea), .frm_forms .input-group-lg > input[type=text]:not(textarea), .frm_forms .input-group-lg > input[type=email]:not(textarea), .frm_forms .input-group-lg > input[type=tel]:not(textarea), .frm_forms .input-group-lg > textarea:not(textarea),
 .input-group-lg > .custom-select {
   height: calc(1.5em + 1rem + 2px);
 }
 
-.input-group-lg > .form-control,
+.input-group-lg > .form-control, .frm_forms .input-group-lg > input[type=text], .frm_forms .input-group-lg > input[type=email], .frm_forms .input-group-lg > input[type=tel], .frm_forms .input-group-lg > textarea,
 .input-group-lg > .custom-select,
 .input-group-lg > .input-group-prepend > .input-group-text,
 .input-group-lg > .input-group-append > .input-group-text,
 .input-group-lg > .input-group-prepend > .btn,
-.input-group-lg > .input-group-append > .btn {
+.input-group-lg > .input-group-prepend > .frm_button_submit,
+.input-group-lg > .wp-block-file.frm_button_submit.input-group-prepend > a,
+.wp-block-file.frm_button_submit.input-group-lg > a.wp-block-file.input-group-prepend > a,
+.input-group-lg > .wp-block-file.btn.input-group-prepend > a,
+.wp-block-file.frm_button_submit > a.wp-block-file.input-group-lg > a.wp-block-file.input-group-prepend > a,
+.wp-block-file.btn.input-group-lg > a.wp-block-file.input-group-prepend > a,
+.input-group-lg > .input-group-append > .btn,
+.input-group-lg > .input-group-append > .frm_button_submit,
+.input-group-lg > .wp-block-file.frm_button_submit.input-group-append > a,
+.wp-block-file.frm_button_submit.input-group-lg > a.wp-block-file.input-group-append > a,
+.input-group-lg > .wp-block-file.btn.input-group-append > a,
+.wp-block-file.frm_button_submit > a.wp-block-file.input-group-lg > a.wp-block-file.input-group-append > a,
+.wp-block-file.btn.input-group-lg > a.wp-block-file.input-group-append > a {
   padding: 0.5rem 1rem;
   font-size: 1.5rem;
   line-height: 1.5;
   border-radius: 0.3rem;
 }
 @media (max-width: 1200px) {
-  .input-group-lg > .form-control,
+  .input-group-lg > .form-control, .frm_forms .input-group-lg > input[type=text], .frm_forms .input-group-lg > input[type=email], .frm_forms .input-group-lg > input[type=tel], .frm_forms .input-group-lg > textarea,
 .input-group-lg > .custom-select,
 .input-group-lg > .input-group-prepend > .input-group-text,
 .input-group-lg > .input-group-append > .input-group-text,
 .input-group-lg > .input-group-prepend > .btn,
-.input-group-lg > .input-group-append > .btn {
+.input-group-lg > .input-group-prepend > .frm_button_submit,
+.input-group-lg > .wp-block-file.frm_button_submit.input-group-prepend > a,
+.wp-block-file.frm_button_submit.input-group-lg > a.wp-block-file.input-group-prepend > a,
+.input-group-lg > .wp-block-file.btn.input-group-prepend > a,
+.wp-block-file.frm_button_submit > a.wp-block-file.input-group-lg > a.wp-block-file.input-group-prepend > a,
+.wp-block-file.btn.input-group-lg > a.wp-block-file.input-group-prepend > a,
+.input-group-lg > .input-group-append > .btn,
+.input-group-lg > .input-group-append > .frm_button_submit,
+.input-group-lg > .wp-block-file.frm_button_submit.input-group-append > a,
+.wp-block-file.frm_button_submit.input-group-lg > a.wp-block-file.input-group-append > a,
+.input-group-lg > .wp-block-file.btn.input-group-append > a,
+.wp-block-file.frm_button_submit > a.wp-block-file.input-group-lg > a.wp-block-file.input-group-append > a,
+.wp-block-file.btn.input-group-lg > a.wp-block-file.input-group-append > a {
     font-size: calc(1.275rem + 0.3vw);
   }
 }
 
-.input-group-sm > .form-control:not(textarea),
+.input-group-sm > .form-control:not(textarea), .frm_forms .input-group-sm > input[type=text]:not(textarea), .frm_forms .input-group-sm > input[type=email]:not(textarea), .frm_forms .input-group-sm > input[type=tel]:not(textarea), .frm_forms .input-group-sm > textarea:not(textarea),
 .input-group-sm > .custom-select {
   height: calc(1.5em + 0.5rem + 2px);
 }
 
-.input-group-sm > .form-control,
+.input-group-sm > .form-control, .frm_forms .input-group-sm > input[type=text], .frm_forms .input-group-sm > input[type=email], .frm_forms .input-group-sm > input[type=tel], .frm_forms .input-group-sm > textarea,
 .input-group-sm > .custom-select,
 .input-group-sm > .input-group-prepend > .input-group-text,
 .input-group-sm > .input-group-append > .input-group-text,
 .input-group-sm > .input-group-prepend > .btn,
-.input-group-sm > .input-group-append > .btn {
+.input-group-sm > .input-group-prepend > .frm_button_submit,
+.input-group-sm > .wp-block-file.frm_button_submit.input-group-prepend > a,
+.wp-block-file.frm_button_submit.input-group-sm > a.wp-block-file.input-group-prepend > a,
+.input-group-sm > .wp-block-file.btn.input-group-prepend > a,
+.wp-block-file.frm_button_submit > a.wp-block-file.input-group-sm > a.wp-block-file.input-group-prepend > a,
+.wp-block-file.btn.input-group-sm > a.wp-block-file.input-group-prepend > a,
+.input-group-sm > .input-group-append > .btn,
+.input-group-sm > .input-group-append > .frm_button_submit,
+.input-group-sm > .wp-block-file.frm_button_submit.input-group-append > a,
+.wp-block-file.frm_button_submit.input-group-sm > a.wp-block-file.input-group-append > a,
+.input-group-sm > .wp-block-file.btn.input-group-append > a,
+.wp-block-file.frm_button_submit > a.wp-block-file.input-group-sm > a.wp-block-file.input-group-append > a,
+.wp-block-file.btn.input-group-sm > a.wp-block-file.input-group-append > a {
   padding: 0.25rem 0.5rem;
   font-size: 0.5rem;
   line-height: 1.5;
@@ -5036,21 +5328,45 @@ input[type=button].btn-block {
   padding-right: 1.75rem;
 }
 
-.input-group > .input-group-prepend > .btn,
+.input-group > .input-group-prepend > .btn, .input-group > .input-group-prepend > .frm_button_submit, .input-group > .wp-block-file.frm_button_submit.input-group-prepend > a, .wp-block-file.frm_button_submit.input-group > a.wp-block-file.input-group-prepend > a, .input-group > .wp-block-file.btn.input-group-prepend > a, .wp-block-file.frm_button_submit > a.wp-block-file.input-group > a.wp-block-file.input-group-prepend > a, .wp-block-file.btn.input-group > a.wp-block-file.input-group-prepend > a,
 .input-group > .input-group-prepend > .input-group-text,
 .input-group > .input-group-append:not(:last-child) > .btn,
+.input-group > .input-group-append:not(:last-child) > .frm_button_submit,
+.input-group > .wp-block-file.frm_button_submit.input-group-append:not(:last-child) > a,
+.wp-block-file.frm_button_submit.input-group > a.wp-block-file.input-group-append:not(:last-child) > a,
+.input-group > .wp-block-file.btn.input-group-append:not(:last-child) > a,
+.wp-block-file.frm_button_submit > a.wp-block-file.input-group > a.wp-block-file.input-group-append:not(:last-child) > a,
+.wp-block-file.btn.input-group > a.wp-block-file.input-group-append:not(:last-child) > a,
 .input-group > .input-group-append:not(:last-child) > .input-group-text,
 .input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+.input-group > .input-group-append:last-child > .frm_button_submit:not(:last-child):not(.dropdown-toggle),
+.input-group > .wp-block-file.frm_button_submit.input-group-append:last-child > a:not(:last-child):not(.dropdown-toggle),
+.wp-block-file.frm_button_submit.input-group > a.wp-block-file.input-group-append:last-child > a:not(:last-child):not(.dropdown-toggle),
+.input-group > .wp-block-file.btn.input-group-append:last-child > a:not(:last-child):not(.dropdown-toggle),
+.wp-block-file.frm_button_submit > a.wp-block-file.input-group > a.wp-block-file.input-group-append:last-child > a:not(:last-child):not(.dropdown-toggle),
+.wp-block-file.btn.input-group > a.wp-block-file.input-group-append:last-child > a:not(:last-child):not(.dropdown-toggle),
 .input-group > .input-group-append:last-child > .input-group-text:not(:last-child) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-.input-group > .input-group-append > .btn,
+.input-group > .input-group-append > .btn, .input-group > .input-group-append > .frm_button_submit, .input-group > .wp-block-file.frm_button_submit.input-group-append > a, .wp-block-file.frm_button_submit.input-group > a.wp-block-file.input-group-append > a, .input-group > .wp-block-file.btn.input-group-append > a, .wp-block-file.frm_button_submit > a.wp-block-file.input-group > a.wp-block-file.input-group-append > a, .wp-block-file.btn.input-group > a.wp-block-file.input-group-append > a,
 .input-group > .input-group-append > .input-group-text,
 .input-group > .input-group-prepend:not(:first-child) > .btn,
+.input-group > .input-group-prepend:not(:first-child) > .frm_button_submit,
+.input-group > .wp-block-file.frm_button_submit.input-group-prepend:not(:first-child) > a,
+.wp-block-file.frm_button_submit.input-group > a.wp-block-file.input-group-prepend:not(:first-child) > a,
+.input-group > .wp-block-file.btn.input-group-prepend:not(:first-child) > a,
+.wp-block-file.frm_button_submit > a.wp-block-file.input-group > a.wp-block-file.input-group-prepend:not(:first-child) > a,
+.wp-block-file.btn.input-group > a.wp-block-file.input-group-prepend:not(:first-child) > a,
 .input-group > .input-group-prepend:not(:first-child) > .input-group-text,
 .input-group > .input-group-prepend:first-child > .btn:not(:first-child),
+.input-group > .input-group-prepend:first-child > .frm_button_submit:not(:first-child),
+.input-group > .wp-block-file.frm_button_submit.input-group-prepend:first-child > a:not(:first-child),
+.wp-block-file.frm_button_submit.input-group > a.wp-block-file.input-group-prepend:first-child > a:not(:first-child),
+.input-group > .wp-block-file.btn.input-group-prepend:first-child > a:not(:first-child),
+.wp-block-file.frm_button_submit > a.wp-block-file.input-group > a.wp-block-file.input-group-prepend:first-child > a:not(:first-child),
+.wp-block-file.btn.input-group > a.wp-block-file.input-group-prepend:first-child > a:not(:first-child),
 .input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -6337,7 +6653,7 @@ a.badge:hover, a.badge:focus {
   display: none;
 }
 
-.btn .badge {
+.btn .badge, .frm_button_submit .badge, .wp-block-file.frm_button_submit > a .badge, .wp-block-file.btn > a .badge {
   position: relative;
   top: -1px;
 }
@@ -6691,7 +7007,7 @@ a.badge-gray-600:focus, a.badge-gray-600.focus {
   border-radius: 0;
 }
 
-.alert {
+.alert, .frm_error_style {
   position: relative;
   padding: 0.75rem 1.25rem;
   margin-bottom: 1rem;
@@ -6778,15 +7094,15 @@ a.badge-gray-600:focus, a.badge-gray-600.focus {
   color: #533f03;
 }
 
-.alert-danger {
+.alert-danger, .frm_error_style {
   color: #721c24;
   background-color: #f8d7da;
   border-color: #f5c6cb;
 }
-.alert-danger hr {
+.alert-danger hr, .frm_error_style hr {
   border-top-color: #f1b0b7;
 }
-.alert-danger .alert-link {
+.alert-danger .alert-link, .frm_error_style .alert-link {
   color: #491217;
 }
 
@@ -10132,7 +10448,7 @@ button.bg-gray-600:focus {
 }
 
 .shadow {
-  box-shadow: 0 0.1875rem 0.9375rem rgba(0, 0, 0, 0.6) !important;
+  box-shadow: 0 0.1875rem 0.9375rem rgba(0, 0, 0, 0.3) !important;
 }
 
 .shadow-lg {
@@ -14461,7 +14777,7 @@ button.bg-gray-600:focus {
   font-weight: 400 !important;
 }
 
-.font-weight-bold {
+.font-weight-bold, .frm_error {
   font-weight: 700 !important;
 }
 
@@ -14517,11 +14833,11 @@ a.text-warning:hover, a.text-warning:focus {
   color: #ba8b00 !important;
 }
 
-.text-danger {
+.text-danger, .frm_error {
   color: #dc3545 !important;
 }
 
-a.text-danger:hover, a.text-danger:focus {
+a.text-danger:hover, a.frm_error:hover, a.text-danger:focus, a.frm_error:focus {
   color: #a71d2a !important;
 }
 
@@ -14681,7 +14997,7 @@ a.text-gray-600:hover, a.text-gray-600:focus {
   color: #2E2F33 !important;
 }
 
-.text-muted {
+.text-muted, .frm_description {
   color: #4D4D4D !important;
 }
 
@@ -14730,7 +15046,7 @@ a.text-gray-600:hover, a.text-gray-600:focus {
     box-shadow: none !important;
   }
 
-  a:not(.btn) {
+  a:not(.btn):not(.frm_button_submit) {
     text-decoration: underline;
   }
 
@@ -21854,6 +22170,9 @@ readers do not read off random characters that represent icons */
     border-width: 14px 0 0 100vw;
   }
 }
+.border-radius-0 {
+  border-radius: 0 !important;
+}
 
 .z-index-1 {
   z-index: 1;
@@ -21899,7 +22218,12 @@ readers do not read off random characters that represent icons */
 }
 
 a.shadow.shadow-lg:hover, a.shadow.shadow-lg:focus {
-  box-shadow: 0 0.1875rem 0.9375rem rgba(0, 0, 0, 0.6) !important;
+  box-shadow: 0 0.1875rem 0.9375rem rgba(0, 0, 0, 0.3) !important;
+}
+
+.transition-slow {
+  -webkit-transition: all 0.6s ease-in-out !important;
+  transition: all 0.6s ease-in-out !important;
 }
 
 html {
@@ -21977,6 +22301,9 @@ figure.alignnone {
   max-width: none;
 }
 
+.wp-block-file.btn, .wp-block-file.frm_button_submit, .wp-block-file.frm_button_submit > a.wp-block-file, .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file, .wp-block-file.btn > a.wp-block-file, .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file, .wp-block-file.btn > a.wp-block-file > a.wp-block-file, .wp-block-file.frm_button_submit > a.wp-block-file > a.wp-block-file > a.wp-block-file > a.wp-block-file {
+  all: unset;
+}
 img {
   max-width: 100%;
   height: auto;
@@ -22088,37 +22415,37 @@ a {
   background: #CCCCCC;
 }
 
-.btn-primary {
+.btn-primary, .wp-block-file.btn-primary > a, .frm_button_submit, .wp-block-file.frm_button_submit > a {
   color: #2E2F33;
   background-color: #FFD580;
   border-color: #FFD580;
 }
-.btn-primary:hover {
+.btn-primary:hover, .wp-block-file.btn-primary > a:hover, .frm_button_submit:hover, .wp-block-file.frm_button_submit > a:hover {
   color: #2E2F33;
   background-color: #E6B85C;
   border-color: #FFD580;
 }
-.btn-primary:focus, .btn-primary.focus {
+.btn-primary:focus, .wp-block-file.btn-primary > a:focus, .frm_button_submit:focus, .wp-block-file.frm_button_submit > a:focus, .btn-primary.focus, .wp-block-file.btn-primary > a.focus, .focus.frm_button_submit, .wp-block-file.frm_button_submit > a.focus {
   color: #2E2F33;
   background-color: #E6B85C;
   border-color: #FFD580;
   box-shadow: 0 0 0 0.2rem rgba(224, 188, 116, 0.5);
 }
-.btn-primary.disabled, .btn-primary:disabled {
+.btn-primary.disabled, .wp-block-file.btn-primary > a.disabled, .disabled.frm_button_submit, .wp-block-file.frm_button_submit > a.disabled, .btn-primary:disabled, .wp-block-file.btn-primary > a:disabled, .frm_button_submit:disabled, .wp-block-file.frm_button_submit > a:disabled {
   color: #2E2F33;
   background-color: #FFD580;
   border-color: #FFD580;
 }
-.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
+.btn-primary:not(:disabled):not(.disabled):active, .wp-block-file.btn-primary > a:not(:disabled):not(.disabled):active, .frm_button_submit:not(:disabled):not(.disabled):active, .wp-block-file.frm_button_submit > a:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .wp-block-file.btn-primary > a:not(:disabled):not(.disabled).active, .frm_button_submit:not(:disabled):not(.disabled).active, .wp-block-file.frm_button_submit > a:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle, .wp-block-file.btn-primary.show > a.dropdown-toggle, .show > .dropdown-toggle.frm_button_submit, .wp-block-file.frm_button_submit.show > a.dropdown-toggle {
   color: #2E2F33;
   background-color: #E6B85C;
   border-color: #FFD580;
 }
-.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .show > .btn-primary.dropdown-toggle:focus {
+.btn-primary:not(:disabled):not(.disabled):active:focus, .wp-block-file.btn-primary > a:not(:disabled):not(.disabled):active:focus, .frm_button_submit:not(:disabled):not(.disabled):active:focus, .wp-block-file.frm_button_submit > a:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .wp-block-file.btn-primary > a:not(:disabled):not(.disabled).active:focus, .frm_button_submit:not(:disabled):not(.disabled).active:focus, .wp-block-file.frm_button_submit > a:not(:disabled):not(.disabled).active:focus, .show > .btn-primary.dropdown-toggle:focus, .wp-block-file.btn-primary.show > a.dropdown-toggle:focus, .show > .dropdown-toggle.frm_button_submit:focus, .wp-block-file.frm_button_submit.show > a.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgba(224, 188, 116, 0.5);
 }
 
-.btn.shadow:hover, .btn.shadow:focus {
+.btn.shadow:hover, .wp-block-file.btn > a.shadow:hover, .wp-block-file.btn > a.wp-block-file > a.shadow:hover, .shadow.frm_button_submit:hover, .wp-block-file.frm_button_submit > a.shadow:hover, .wp-block-file.frm_button_submit > a.wp-block-file > a.shadow:hover, .btn.shadow:focus, .wp-block-file.btn > a.shadow:focus, .wp-block-file.btn > a.wp-block-file > a.shadow:focus, .shadow.frm_button_submit:focus, .wp-block-file.frm_button_submit > a.shadow:focus, .wp-block-file.frm_button_submit > a.wp-block-file > a.shadow:focus {
   box-shadow: 0 0.1875rem 0.3125rem rgba(0, 0, 0, 0.6) !important;
 }
 
@@ -22126,6 +22453,56 @@ a {
   width: 100%;
   max-width: 140px;
   height: auto;
+}
+
+.icon-bar {
+  width: 36px;
+  height: 2px;
+  background-color: #fff;
+  display: block;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  margin-top: 8px;
+  position: relative;
+}
+
+.navbar-toggler {
+  border: none;
+  background: #2A374D !important;
+  width: 56px;
+  height: 46px;
+  padding-left: 10px !important;
+}
+.navbar-toggler .top-bar {
+  margin-top: 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transform-origin: 10% 10%;
+          transform-origin: 10% 10%;
+  left: 5px;
+}
+.navbar-toggler .middle-bar {
+  opacity: 0;
+}
+.navbar-toggler .bottom-bar {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transform-origin: 10% 90%;
+          transform-origin: 10% 90%;
+  left: 5px;
+}
+.navbar-toggler.collapsed .top-bar {
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+  left: 0;
+}
+.navbar-toggler.collapsed .middle-bar {
+  opacity: 1;
+}
+.navbar-toggler.collapsed .bottom-bar {
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+  left: 0;
 }
 
 .navbar-nav .menu-item {

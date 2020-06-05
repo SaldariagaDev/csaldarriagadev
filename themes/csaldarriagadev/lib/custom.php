@@ -9,7 +9,6 @@
  * widgets.php     - to manage widget areas
  */
 
-
 /**
  * WordPress Bootstrap Pagination
  */

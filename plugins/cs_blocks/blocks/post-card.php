@@ -1,7 +1,7 @@
 <?php use WPDev\Models\Image;
 use WPDev\Models\Post;
 /** @var \WPDev\Models\Post $post */ ?>
-<a href="<?= $post->url(); ?>" class="card border-0 shadow shadow-lg text-decoration-none">
+<a href="<?= $post->url(); ?>" class="card border-0 shadow shadow-lg transition-slow text-decoration-none">
 	<div class="card-body">
 		<h3 class="h5 font-weight-light text-gray-600"><?= $post->title(); ?></h3>
 

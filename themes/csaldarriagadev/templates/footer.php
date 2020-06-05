@@ -1,6 +1,6 @@
 <div class="mt-auto container">
 <!--    <div class="full-width px-0 border-triangle-top-left-secondary-700 mt-n3"></div>-->
-    <div class="full-width py-6 bg-gradient-secondary-700--dark-400  text-light text-center">
+    <div class="full-width mt-6 py-6 bg-gradient-secondary-700--dark-400  text-light text-center">
         <h2 class="font-weight-normal">Free Consultation</h2>
         <p class="lead">Get in touch to discuss web development/design and internet marketing needs</p>
         <a href="/contact" class="btn btn-primary btn-lg shadow">Schedule Now</a>
@@ -27,9 +27,9 @@
                         <div class="col-12 col-md-6">
                             <h2 class="mb-3 font-weight-normal">Follow</h2>
                             <div>
-                                <a href="facebook.com" class="text-gray-300"><i class="fab fa-facebook-square fa-4x"></i></a>
-                                <a href="linkedin.com" class="text-gray-300 mx-3"><i class="fab fa-linkedin fa-4x"></i></a>
-                                <a href="google.com" class="text-gray-300"><i class="fab fa-google-plus fa-4x"></i></a>
+                                <a href="https://www.facebook.com/CSaldarriagaDev" class="text-gray-300"><i class="fab fa-facebook-square fa-4x"></i></a>
+                                <a href="https://www.linkedin.com/in/christian-saldarriaga-6069444a/" class="text-gray-300 ml-3"><i class="fab fa-linkedin fa-4x"></i></a>
+<!--                                <a href="google.com" class="text-gray-300"><i class="fab fa-google-plus fa-4x"></i></a>-->
                             </div>
                         </div>
                     </div>

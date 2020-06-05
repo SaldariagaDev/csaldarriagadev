@@ -139,6 +139,12 @@
             }
         }
     }
+    
+    &-radius {
+        &-0 {
+            border-radius: 0 !important;
+        }
+    }
 }
 
 .z-index {
@@ -191,5 +197,11 @@ a.shadow {
         &:hover, &:focus {
             box-shadow: $box-shadow !important;
         }
+    }
+}
+
+.transition {
+    &-slow {
+        transition: all .6s ease-in-out !important;
     }
 }
